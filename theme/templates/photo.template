@@ -1,0 +1,11 @@
+{% extends "post.template" %}
+
+{% block type %}photo{% endblock %}
+
+{% block content %}
+  <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" />
+
+  {block:Caption}
+    <span class="caption">{Caption}</span>
+  {/block:Caption}
+{% endblock %}

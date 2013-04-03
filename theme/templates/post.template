@@ -1,0 +1,30 @@
+{% capture as type %}
+  {% block type %}generic{% endblock %}
+{% endcapture %}
+
+{block:{{ type|capitalize }}}
+  <li class="post {{ type|css }}">
+    <h3 class="permalink">
+      <a href="{Permalink}">#{PostID}</a>
+    </h3>
+    
+    <div class="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+    
+    {block:HasTags}
+      <ul class="tags">
+        {block:Tags}
+          <li>
+            <a href="{TagURL}">#{TagURLChrono}</a>
+          </li>
+        {/block:Tags}
+      </ul>
+    {/block:HasTags}
+    
+    {block:PermalinkPage}
+      {% include 'notes.template' %}
+    {/block:PermalinkPage}
+  </li>
+{/block:{{ type|capitalize }}}

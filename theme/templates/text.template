@@ -1,0 +1,11 @@
+{% extends "post.template" %}
+
+{% block type %}text{% endblock %}
+
+{% block content %}
+  {Body}
+  
+  {block:Title}
+    <span class="title">{Title}</span>
+  {/block:Title}
+{% endblock %}

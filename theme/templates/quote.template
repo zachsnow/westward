@@ -1,0 +1,12 @@
+{% extends "post.template" %}
+
+{% block type %}quote{% endblock %}
+
+
+{% block content %}
+  &ldquo;{Quote}&rdquo;
+
+  {block:Source}
+    <div class="source">{Source}</div>
+  {/block:Source}
+{% endblock %}

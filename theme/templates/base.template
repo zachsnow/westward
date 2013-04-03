@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>{Title}{block:PostTitle} | {PostTitle}{/block:PostTitle}</title>
+    <link rel="shortcut icon" href="{Favicon}">
+    
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    
+    <meta name="viewport" content="width=780">
+    
+    {block:Description}
+      <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    
+    <meta property="og:title" content="{Title}{block:PostTitle} | {PostTitle}{/block:PostTitle}" />
+    <meta property="og:image" content="{{ root_url }}{{ STATIC_URL }}images/logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Whistling Westward | Photography by Molly Peppel Snow" />
+    <meta property="fb:admins" content="13900224" />
+    
+    {block:Description}
+      <meta property="og:description" content="{MetaDescription}" />
+    {% endblock %}
+    
+    
+    {% block custom_values %}
+      <meta name="color:Background" content="#202020"/>
+      <meta name="color:Post Border" content="#ffffff"/>
+      <meta name="color:Text" content="#202020"/>
+      
+      <meta name="text:Visible Email" content="" />
+      
+      <meta name="text:Google Analytics ID" content="" />
+    {% endblock %}
+    
+    {% block google_analytics %}
+      {block:IfGoogle Analytics ID}
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', {JSGoogle Analytics ID}]);
+          _gaq.push(['_trackPageview']);
+          
+          // NOTE: don't track here, navigation.js will do it!
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+      {/block:IfGoogle Analytics ID}
+    {% endblock %}
+    
+    <style type="text/css">
+      {{ rendered_css }}
+      
+      {CustomCSS}
+    </style>
+  </head>
+  
+  <body>
+    {% include 'header.template' %}
+    {% include 'posts.template' %}
+    {% include 'footer.template' %}
+  </body>
+</html>

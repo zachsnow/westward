@@ -1,0 +1,23 @@
+<div class="header">
+  <h1 class="title">{Title}</h1>
+  
+  {block:Email}
+    <h2 class="contact">
+      <a href="mailto:{text:Email}">{text:Email}</a>
+    </h2>
+  {/block:Email}
+  
+  {block:Description}
+    <h2 class="description">{Description}</h2>
+  {/block:Description}
+  
+  {block:HasPages}
+    <ul class="navigation">
+      {block:Pages}
+        <li class="navigation-link">
+          <a href="{URL}">{Label}</a>
+        </li>
+      {/block:Pages}
+    </ul>
+  {/block:HasPages}
+</div>
