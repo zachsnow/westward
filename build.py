@@ -6,19 +6,26 @@ OUTPUT_PATH = os.path.join(PATH, 'output')
 
 SCSS_EXECUTABLE = 'scss --style expanded %(input)s %(output)s'
 
+def template(template, context):
+    """
+    Process the given `template` using the given `context`
+    and return a string containing the output.
+    """
+    pass
+
 def compile(input):
-    
+    """
+    Compile the given SCSS and return a string containing
+    the output.
+    """
+    pass
+
 def main():
-    # Step 1: compile SCSS.
     css = compile(SCSS_PATH)
 
-    # Step 2: Template HTML, once for main theme and once for iphoe.
     for html in HTML:
         input = os.path.join(PATH, html)
         output = template(input, {
             'css': css
         })
         save(html, output)
-
-
-# Step 3.
