@@ -3,11 +3,9 @@
 {% block type %}text{% endblock %}
 
 {% block content %}
-  {Body}
-{% endblock %}
-
-{% block title %}
+  <div class="text-body">{Body}</div>
+  
   {block:Title}
-    <span class="text-title">{Title}</span>
+    <div class="text-title">{Title}</div>
   {/block:Title}
 {% endblock %}

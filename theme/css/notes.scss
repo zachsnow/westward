@@ -1,0 +1,19 @@
+.notes {
+  text-align: center;
+  color: $secondaryTextColor;
+  
+  .note-count {
+    &.no-notes {
+      display: inline-block;
+      padding: 0 15px;
+      
+      &:hover {
+        background-color: $highlightColor;
+      }
+      
+      &.has-notes {
+        display: none;
+      }
+    }
+  }
+}

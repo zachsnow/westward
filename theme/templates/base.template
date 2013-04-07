@@ -26,16 +26,8 @@
     {/block:Description}
     
     
-    {% block custom_values %}
-      <meta name="color:Text" content="#394857"/>
-      <meta name="color:Background" content="#9cd8e4"/>
-      <meta name="color:Post Border" content="#ffffff"/>
-      
-      <meta name="text:Byline" content="" />
-      <meta name="text:Visible Email" content="" />
-      
-      <meta name="text:Google Analytics ID" content="" />
-      <meta name="text:Typekit ID" content="" />
+    {% block custom_variables %}
+      {% include 'custom-variables.template' %}
     {% endblock %}
     
     {% block google_analytics %}
@@ -57,7 +49,7 @@
     
     {% block typekit %}
       {block:IfTypekitID}
-        <script type="text/javascript" src="//use.typekit.net/{text:TypekitID}.js"></script>
+        <script type="text/javascript" src="//use.typekit.net/{text:Typekit ID}.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
       {/block:IfTypekitID}
     {% endblock %}

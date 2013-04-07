@@ -1,6 +1,16 @@
-$siteWidth: 780px;
+$contentWidth: 780px;
+
+$backgroundColor: #{'{color:Background Color}'};
+$primaryTextColor: #{'{color:Primary Text Color}'};
+$secondaryTextColor: #{'{color:Secondary Text Color}'};
+$highlightColor: #{'{color:Highlight Color}'};
+
+$postBackgroundColor: #{'{color:Post Background Color}'};
+$postBorderColor: #{'{color:Post Border Color}'};
 
 @import "reset";
 @import "general";
 @import "header";
 @import "posts";
+@import "navigation";
+@import "notes";

@@ -1,0 +1,9 @@
+{block:HasPages}
+  <ul class="navigation">
+    {block:Pages}
+      <li class="navigation-link">
+        <a href="{URL}">{Label}</a>
+      </li>
+    {/block:Pages}
+  </ul>
+{/block:HasPages}

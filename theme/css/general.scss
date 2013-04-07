@@ -1,11 +1,21 @@
 body {
-  color: #{'{color:Text}'}; 
-  background-color: #{'{color:Background}'};
+  color: #{'{color:Primary Text Color}'}; 
+  background-color: #{'{color:Background Color}'};
   font-family: "cronos-pro-subhead";
-  line-height: 1.8em; 
+  line-height: 1.8em;
 }
 
-.main {
-  width: $siteWidth;
-  margin: 0 auto;
+.footer {
+  text-align: center;
+  color: #{'{color:Secondary Text Color}'};
+  
+  .archive {}
+}
+
+i, em {
+  font-style: italic;
+}
+
+b, strong {
+  font-weight: bold;
 }

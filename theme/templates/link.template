@@ -3,9 +3,14 @@
 {% block type %}link{% endblock %}
 
 {% block content %}
-  <a href="{URL}" class="link" {Target}>{Name}</a>
+  <div class="link-target">
+    <a href="{URL}" class="link-name" {Target}>
+      <span class="link-symbol">&#x260d;</span>
+      {Name}
+    </a>
+  </div>
 
   {block:Description}
-      <div class="description">{Description}</div>
+    <div class="link-description">{Description}</div>
   {/block:Description}
 {% endblock %}

@@ -27,15 +27,20 @@
     
     
     
-      <meta name="color:Text" content="#394857"/>
-      <meta name="color:Background" content="#9cd8e4"/>
-      <meta name="color:Post Border" content="#ffffff"/>
-      
-      <meta name="text:Byline" content="" />
-      <meta name="text:Visible Email" content="" />
-      
-      <meta name="text:Google Analytics ID" content="" />
-      <meta name="text:Typekit ID" content="" />
+      <meta name="color:Background Color" content="#181818"/>
+<meta name="color:Post Border Color" content="#303030"/>
+<meta name="color:Post Background Color" content="#202020"/>
+
+<meta name="color:Primary Text Color" content="#f0f0f0" />
+<meta name="color:Secondary Text Color" content="#a0a0a0" />
+<meta name="color:Highlight Color" content="#303030" />
+
+<meta name="text:Byline" content="" />
+<meta name="text:Visible Email" content="" />
+<meta name="text:No Notes Message" content="~" />
+
+<meta name="text:Google Analytics ID" content="" />
+<meta name="text:Typekit ID" content="" />
     
     
     
@@ -57,7 +62,7 @@
     
     
       {block:IfTypekitID}
-        <script type="text/javascript" src="//use.typekit.net/{text:TypekitID}.js"></script>
+        <script type="text/javascript" src="//use.typekit.net/{text:Typekit ID}.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
       {/block:IfTypekitID}
     
@@ -112,65 +117,176 @@ a {
 }
 
 body {
-  color: {color:Text};
-  background-color: {color:Background};
+  color: {color:Primary Text Color};
+  background-color: {color:Background Color};
   font-family: "cronos-pro-subhead";
   line-height: 1.8em;
 }
 
-.main {
-  width: 780px;
-  margin: 0 auto;
+.footer {
+  text-align: center;
+  color: {color:Secondary Text Color};
+}
+
+i, em {
+  font-style: italic;
+}
+
+b, strong {
+  font-weight: bold;
 }
 
 .header {
   overflow-y: auto;
+  font-family: "caflisch-script-pro";
 }
-.header .header-blog-information {
+.header .header-mast {
   float: left;
+  padding: 50px 0 0 50px;
 }
-.header .header-blog-information .header-title {
-  font-size: 30px;
+.header .header-mast .header-title {
+  font-size: 60px;
+  width: 1px;
+  line-height: 0.6em;
 }
-.header .header-blog-information .header-byline {
+.header .header-mast .header-byline {
   font-size: 20px;
+  padding-top: 10px;
+  padding-left: 5px;
 }
-.header .header-author-information {
+.header .header-author {
   float: right;
   text-align: right;
+  display: none;
 }
-.header .header-author-information .header-description {
+.header .header-author .header-description {
   line-height: 1.2em;
   max-width: 390px;
 }
 
-.post {
-  padding: 10px;
+.posts .post {
   margin-bottom: 40px;
-  background-color: {color:Post Border};
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid {color:Post Border Color};
+  /* Shared between photo and photoset posts. */
 }
-.post .post-content {
+.posts .post:last-child {
+  margin-bottom: 20px;
+}
+.posts .post .post-content {
+  max-width: 780px;
+  margin: 0 auto;
   display: relative;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e0e0e0;
 }
-.post .tags {
-  display: inline;
+.posts .post .post-footer {
+  margin-top: 10px;
 }
-.post .tags .tag {
+.posts .post .post-footer .post-tags {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+.posts .post .post-footer .post-tags .post-tag {
   display: inline;
   font-weight: bold;
+  color: {color:Secondary Text Color};
 }
-.post.photo .photo-image {
+.posts .post.photo .photo-caption, .posts .post.photoset .photo-caption {
+  font-family: "caflisch-script-pro";
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+}
+.posts .post.photo .photoset-photos .photoset-photo .photo-image, .posts .post.photoset .photoset-photos .photoset-photo .photo-image {
   width: 100%;
+  height: auto;
   vertical-align: bottom;
-  opacity: 0.9;
 }
-.post.photo:hover .photo-image {
-  opacity: 1;
+.posts .post.text .text-body {
+  border: 1px solid {color:Post Border Color};
+  padding: 20px;
+  background-color: {color:Post Background Color};
 }
-.post.quote .quote-source {
-  text-align: right;
+.posts .post.text .text-body p {
+  margin-bottom: 20px;
+}
+.posts .post.text .text-body p:last-child {
+  margin-bottom: 0;
+}
+.posts .post.text .text-title {
+  text-align: center;
+  margin-top: 20px;
+}
+.posts .post.quote .quote-wrap {
+  border-left: 6px solid {color:Post Border Color};
+  padding-left: 20px;
+}
+.posts .post.quote .quote-text {
+  font-style: italic;
+  font-size: 20px;
+}
+.posts .post.link {
+  text-align: center;
+}
+.posts .post.link .link-target .link-name {
+  display: inline-block;
+  padding: 20px;
+  font-size: 30px;
+}
+.posts .post.link .link-target .link-name:hover {
+  background-color: {color:Highlight Color};
+}
+.posts .post.link .link-target .link-name .link-symbol {
+  vertical-align: middle;
+  padding-right: 10px;
+  font-size: 50px;
+  color: {color:Secondary Text Color};
+}
+.posts .post.link .link-description {
+  margin-top: 10px;
+}
+
+.pagination {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.pagination .pagination-link {
+  display: inline-block;
+  padding: 5px 20px;
+  visibility: hidden;
+}
+.pagination .pagination-link.exists {
+  visibility: visible;
+}
+.pagination .pagination-link:hover {
+  background-color: {color:Highlight Color};
+}
+.pagination .pagination-current {
+  padding: 5px 20px;
+}
+
+.navigation {
+  text-align: center;
+}
+.navigation .navigation-link {
+  display: inline;
+}
+
+.notes {
+  text-align: center;
+  color: {color:Secondary Text Color};
+}
+.notes .note-count.no-notes {
+  display: inline-block;
+  padding: 0 15px;
+}
+.notes .note-count.no-notes:hover {
+  background-color: {color:Highlight Color};
+}
+.notes .note-count.no-notes.has-notes {
+  display: none;
 }
 
       
@@ -181,18 +297,20 @@ body {
   <body>
     <div class="main">
       <div class="header">
-  <div class="header-blog-information">
-    <h1 class="header-title">{Title}</h1>
+  <div class="header-mast">
+    <h1 class="header-title font-headers">
+      <a href="/">{Title}</a>
+    </h1>
     
     {block:IfByline}
-      <h2 class="header-byline"><span class="by">by:</span> {text:Byline}</h2>
+      <h2 class="header-byline">{text:Byline}</h2>
     {/block:IfByline}
   </div>
   
-  <div class="header-author-information">
+  <div class="header-author">
     {block:IfVisibleEmail}
       <h3 class="header-contact">
-        <span class="header-email">{text:VisibleEmail}</span>
+        <span class="header-email">{text:Visible Email}</span>
       </h3>
     {/block:IfVisibleEmail}
     
@@ -200,112 +318,237 @@ body {
       <h3 class="header-description">{Description}</h2>
     {/block:Description}
   </div>
-  
-  {block:HasPages}
-    <ul class="header-navigation">
-      {block:Pages}
-        <li class="navigation-link">
-          <a href="{URL}">{Label}</a>
-        </li>
-      {/block:Pages}
-    </ul>
-  {/block:HasPages}
 </div>
       <ul class="posts">
   {block:Posts}
     {block:Text}
-  <!--
+  <!-- TODO: there's got to be a better way! Squagels!
     text
   -->
-  
   <li class="post text {TagsAsClasses}">
     <div class="post-content">
       
-  {Body}
+  <div class="text-body">{Body}</div>
+  
+  {block:Title}
+    <div class="text-title">{Title}</div>
+  {/block:Title}
 
     </div>
     
     <div class="post-footer">
-      <h3 class="title">
-        <a href="{Permalink}" target="_new">
-          
-  {block:Title}
-    <span class="text-title">{Title}</span>
-  {/block:Title}
-
-        </a>
-      </h3>
-      
       {block:HasTags}
-        <ul class="tags">
+        <ul class="post-tags">
           {block:Tags}
-            <li class="tag">
-              <a href="{TagURLChrono}" class="tag-link">#{Tag}</a>
+            <li class="post-tag">
+              <a href="{TagURL}">#{Tag}</a>
             </li>
           {/block:Tags}
         </ul>
       {/block:HasTags}
-    </div>
-    
-    {block:PermalinkPage}
       
-    {/block:PermalinkPage}
+      <div class="notes">
+  <a href="{Permalink}" class="note-count no-notes {block:NoteCount}has-notes{/block:NoteCount}" target="_new">{text:No Notes Message}</a>
+  {block:PostNotes}
+    {block:NoteCount}
+      <a class="note-count" href="{Permalink}" target="_new">{NotesCountWithLabel}</a>
+    {/block:NoteCount}
+    {PostNotes-64}
+  {/block:PostNotes}
+</div>
+    </div>
   </li>
 {/block:Text}
     {block:Photo}
-  <!--
+  <!-- TODO: there's got to be a better way! Squagels!
     photo
   -->
-  
   <li class="post photo {TagsAsClasses}">
     <div class="post-content">
       
-  <img class="photo-image" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" />
+  <ul class="photoset-photos">
+    <li class="photoset-photo">
+  <img class="photo-image" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"
+    width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"
+  />
+</li>
+  </ul>
+  
+  <div class="photo-caption font-headers">{Caption}</div>
 
     </div>
     
     <div class="post-footer">
-      <h3 class="title">
-        <a href="{Permalink}" target="_new">
-          
-  {block:Caption}
-    <span class="caption">{Caption}</span>
-  {/block:Caption}
-
-        </a>
-      </h3>
-      
       {block:HasTags}
-        <ul class="tags">
+        <ul class="post-tags">
           {block:Tags}
-            <li class="tag">
-              <a href="{TagURLChrono}" class="tag-link">#{Tag}</a>
+            <li class="post-tag">
+              <a href="{TagURL}">#{Tag}</a>
             </li>
           {/block:Tags}
         </ul>
       {/block:HasTags}
-    </div>
-    
-    {block:PermalinkPage}
       
-    {/block:PermalinkPage}
+      <div class="notes">
+  <a href="{Permalink}" class="note-count no-notes {block:NoteCount}has-notes{/block:NoteCount}" target="_new">{text:No Notes Message}</a>
+  {block:PostNotes}
+    {block:NoteCount}
+      <a class="note-count" href="{Permalink}" target="_new">{NotesCountWithLabel}</a>
+    {/block:NoteCount}
+    {PostNotes-64}
+  {/block:PostNotes}
+</div>
+    </div>
   </li>
 {/block:Photo}
+    {block:Photoset}
+  <!-- TODO: there's got to be a better way! Squagels!
+    photoset
+  -->
+  <li class="post photoset {TagsAsClasses}">
+    <div class="post-content">
+      
+  <ul class="photoset-photos">
+    {block:Photos}
+      <li class="photoset-photo">
+  <img class="photo-image" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"
+    width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"
+  />
+</li>
+    {/block:Photos}
+  </ul>
+  
+  <div class="photo-caption font-headers">{Caption}</div>
+
+    </div>
+    
+    <div class="post-footer">
+      {block:HasTags}
+        <ul class="post-tags">
+          {block:Tags}
+            <li class="post-tag">
+              <a href="{TagURL}">#{Tag}</a>
+            </li>
+          {/block:Tags}
+        </ul>
+      {/block:HasTags}
+      
+      <div class="notes">
+  <a href="{Permalink}" class="note-count no-notes {block:NoteCount}has-notes{/block:NoteCount}" target="_new">{text:No Notes Message}</a>
+  {block:PostNotes}
+    {block:NoteCount}
+      <a class="note-count" href="{Permalink}" target="_new">{NotesCountWithLabel}</a>
+    {/block:NoteCount}
+    {PostNotes-64}
+  {/block:PostNotes}
+</div>
+    </div>
+  </li>
+{/block:Photoset}
+    {block:Quote}
+  <!-- TODO: there's got to be a better way! Squagels!
+    quote
+  -->
+  <li class="post quote {TagsAsClasses}">
+    <div class="post-content">
+      
+  <div class="quote-wrap">
+    <div class="quote-text">
+      &ldquo;{Quote}&rdquo;
+    </div>
+    
+    {block:Source}
+      <div class="quote-source">&mdash; {Source}</div>
+    {/block:Source}
+  </div>
+
+    </div>
+    
+    <div class="post-footer">
+      {block:HasTags}
+        <ul class="post-tags">
+          {block:Tags}
+            <li class="post-tag">
+              <a href="{TagURL}">#{Tag}</a>
+            </li>
+          {/block:Tags}
+        </ul>
+      {/block:HasTags}
+      
+      <div class="notes">
+  <a href="{Permalink}" class="note-count no-notes {block:NoteCount}has-notes{/block:NoteCount}" target="_new">{text:No Notes Message}</a>
+  {block:PostNotes}
+    {block:NoteCount}
+      <a class="note-count" href="{Permalink}" target="_new">{NotesCountWithLabel}</a>
+    {/block:NoteCount}
+    {PostNotes-64}
+  {/block:PostNotes}
+</div>
+    </div>
+  </li>
+{/block:Quote}
+    {block:Link}
+  <!-- TODO: there's got to be a better way! Squagels!
+    link
+  -->
+  <li class="post link {TagsAsClasses}">
+    <div class="post-content">
+      
+  <div class="link-target">
+    <a href="{URL}" class="link-name" {Target}>
+      <span class="link-symbol">&#x260d;</span>
+      {Name}
+    </a>
+  </div>
+
+  {block:Description}
+    <div class="link-description">{Description}</div>
+  {/block:Description}
+
+    </div>
+    
+    <div class="post-footer">
+      {block:HasTags}
+        <ul class="post-tags">
+          {block:Tags}
+            <li class="post-tag">
+              <a href="{TagURL}">#{Tag}</a>
+            </li>
+          {/block:Tags}
+        </ul>
+      {/block:HasTags}
+      
+      <div class="notes">
+  <a href="{Permalink}" class="note-count no-notes {block:NoteCount}has-notes{/block:NoteCount}" target="_new">{text:No Notes Message}</a>
+  {block:PostNotes}
+    {block:NoteCount}
+      <a class="note-count" href="{Permalink}" target="_new">{NotesCountWithLabel}</a>
+    {/block:NoteCount}
+    {PostNotes-64}
+  {/block:PostNotes}
+</div>
+    </div>
+  </li>
+{/block:Link}
   {/block:Posts}
 </ul>
 
-<div class="post-navigation">
-  {block:PreviousPage}
-    <a class="previous" href="{PreviousPage}">&laquo;</a>
-  {/block:PreviousPage}
-
-  <a class="archive" href="/archive">Archive</a>
+{block:Pagination}
+  <div class="pagination">
+    <a class="pagination-link pagination-previous {block:PreviousPage}exists{/block:PreviousPage}"
+      href="{block:PreviousPage}{PreviousPage}{/block:PreviousPage}"
+    >&laquo;</a>
   
-  {block:NextPage}
-    <a class="next" href="{NextPage}">&raquo;</a>
-  {/block:NextPage}
-</div>
+    <span class="pagination-current">{CurrentPage}</span>
+    
+    <a class="pagination-link pagination-next {block:NextPage}exists{/block:NextPage}"
+      href="{block:NextPage}{NextPage}{/block:NextPage}"
+    >&raquo;</a>
+  </div>
+{/block:Pagination}
       <div class="footer">
+  <a class="archive" href="/archive">Archive</a>
+  |
   <a href="https://github.com/zachsnow/whistlingwestward.com/">&copy; Snow</a>
 </div>
     </div>

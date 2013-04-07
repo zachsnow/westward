@@ -1,26 +1,33 @@
 .header {
   overflow-y: auto;
-  
-  .header-blog-information {
+  font-family: "caflisch-script-pro";
+
+  .header-mast {
     float: left;
+    padding: 50px 0 0 50px;
     
     .header-title {
-      font-size: 30px;
+      font-size: 60px;
+      width: 1px;
+      line-height: 0.6em;
     }
     
     .header-byline {
       font-size: 20px;
+      padding-top: 10px;
+      padding-left: 5px;
     }
   }
   
-  .header-author-information {
+  .header-author {
     float: right;
     text-align: right;
+    display: none;
     
     .header-contact {}
     .header-description {
       line-height: 1.2em;
-      max-width: $siteWidth / 2;
+      max-width: $contentWidth / 2;
     }
   }
 }

@@ -1,8 +1,7 @@
 {block:{{ self.type()|capitalize }}}
-  <!--
+  <!-- TODO: there's got to be a better way! Squagels!
     {% block type %}{{ required() }}{% endblock %}
   -->
-  
   <li class="post {{ self.type()|css }} {TagsAsClasses}">
     <div class="post-content">
       {% block content %}
@@ -10,26 +9,17 @@
     </div>
     
     <div class="post-footer">
-      <h3 class="title">
-        <a href="{Permalink}" target="_new">
-          {% block title %}
-          {% endblock %}
-        </a>
-      </h3>
-      
       {block:HasTags}
-        <ul class="tags">
+        <ul class="post-tags">
           {block:Tags}
-            <li class="tag">
-              <a href="{TagURLChrono}" class="tag-link">#{Tag}</a>
+            <li class="post-tag">
+              <a href="{TagURL}">#{Tag}</a>
             </li>
           {/block:Tags}
         </ul>
       {/block:HasTags}
-    </div>
-    
-    {block:PermalinkPage}
+      
       {% include 'notes.template' %}
-    {/block:PermalinkPage}
+    </div>
   </li>
 {/block:{{ self.type()|capitalize }}}
