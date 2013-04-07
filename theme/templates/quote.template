@@ -2,11 +2,14 @@
 
 {% block type %}quote{% endblock %}
 
-
 {% block content %}
-  &ldquo;{Quote}&rdquo;
+  <div class="quote-text">
+    &ldquo;{Quote}&rdquo;
+  </div>
+{% endblock %}
 
+{% block title %}
   {block:Source}
-    <div class="source">{Source}</div>
+    <div class="quote-source">{Source}</div>
   {/block:Source}
 {% endblock %}

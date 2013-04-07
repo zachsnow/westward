@@ -1,0 +1,25 @@
+.header {
+  overflow-y: auto;
+  
+  .header-blog-information {
+    float: left;
+    
+    .header-title {
+      font-size: 30px;
+    }
+    
+    .header-byline {
+      font-size: 20px;
+    }
+  }
+  
+  .header-author-information {
+    float: right;
+    
+    .header-contact {}
+    .header-description {
+      line-height: 1.2em;
+      max-width: $siteWidth / 2;
+    }
+  }
+}

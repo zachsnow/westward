@@ -1,18 +1,26 @@
 <div class="header">
-  <h1 class="title">{Title}</h1>
+  <div class="header-blog-information">
+    <h1 class="header-title">{Title}</h1>
+    
+    {block:IfByline}
+      <h2 class="header-byline"><span class="by">by:</span> {text:Byline}</h2>
+    {/block:IfByline}
+  </div>
   
-  {block:Email}
-    <h2 class="contact">
-      <a href="mailto:{text:Email}">{text:Email}</a>
-    </h2>
-  {/block:Email}
-  
-  {block:Description}
-    <h2 class="description">{Description}</h2>
-  {/block:Description}
+  <div class="header-author-information">
+    {block:IfVisibleEmail}
+      <h3 class="header-contact">
+        <span class="header-email">{text:VisibleEmail}</span>
+      </h3>
+    {/block:IfVisibleEmail}
+    
+    {block:Description}
+      <h3 class="header-description">{Description}</h2>
+    {/block:Description}
+  </div>
   
   {block:HasPages}
-    <ul class="navigation">
+    <ul class="header-navigation">
       {block:Pages}
         <li class="navigation-link">
           <a href="{URL}">{Label}</a>

@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>{Title}{block:PostTitle} | {PostTitle}{/block:PostTitle}</title>
+    
     <link rel="shortcut icon" href="{Favicon}">
     
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
@@ -21,21 +23,22 @@
     
     {block:Description}
       <meta property="og:description" content="{MetaDescription}" />
-    {% endblock %}
+    {/block:Description}
     
     
     {% block custom_values %}
-      <meta name="color:Background" content="#202020"/>
+      <meta name="color:Text" content="#394857"/>
+      <meta name="color:Background" content="#9cd8e4"/>
       <meta name="color:Post Border" content="#ffffff"/>
-      <meta name="color:Text" content="#202020"/>
       
+      <meta name="text:Byline" content="" />
       <meta name="text:Visible Email" content="" />
       
       <meta name="text:Google Analytics ID" content="" />
     {% endblock %}
     
     {% block google_analytics %}
-      {block:IfGoogle Analytics ID}
+      {block:IfGoogleAnalyticsID}
         <script type="text/javascript">
           var _gaq = _gaq || [];
           _gaq.push(['_setAccount', {JSGoogle Analytics ID}]);
@@ -48,7 +51,7 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
           })();
         </script>
-      {/block:IfGoogle Analytics ID}
+      {/block:IfGoogleAnalyticsID}
     {% endblock %}
     
     <style type="text/css">
@@ -59,8 +62,10 @@
   </head>
   
   <body>
-    {% include 'header.template' %}
-    {% include 'posts.template' %}
-    {% include 'footer.template' %}
+    <div class="main">
+      {% include 'header.template' %}
+      {% include 'posts.template' %}
+      {% include 'footer.template' %}
+    </div>
   </body>
 </html>

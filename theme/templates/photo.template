@@ -3,8 +3,10 @@
 {% block type %}photo{% endblock %}
 
 {% block content %}
-  <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" />
+  <img class="photo-image" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" />
+{% endblock %}
 
+{% block title %}
   {block:Caption}
     <span class="caption">{Caption}</span>
   {/block:Caption}

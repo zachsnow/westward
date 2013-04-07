@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{Title}{block:PostTitle} | {PostTitle}{/block:PostTitle}</title>
+    
+    <link rel="shortcut icon" href="{Favicon}">
+    
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    
+    <meta name="viewport" content="width=780">
+    
+    {block:Description}
+      <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    
+    <meta property="og:title" content="{Title}{block:PostTitle} | {PostTitle}{/block:PostTitle}" />
+    <meta property="og:image" content="images/logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Whistling Westward | Photography by Molly Peppel Snow" />
+    <meta property="fb:admins" content="13900224" />
+    
+    {block:Description}
+      <meta property="og:description" content="{MetaDescription}" />
+    {/block:Description}
+    
+    
+    
+      <meta name="color:Text" content="#394857"/>
+      <meta name="color:Background" content="#9cd8e4"/>
+      <meta name="color:Post Border" content="#ffffff"/>
+      
+      <meta name="text:Byline" content="" />
+      <meta name="text:Visible Email" content="" />
+      
+      <meta name="text:Google Analytics ID" content="" />
+    
+    
+    
+      {block:IfGoogleAnalyticsID}
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', {JSGoogle Analytics ID}]);
+          _gaq.push(['_trackPageview']);
+          
+          // NOTE: don't track here, navigation.js will do it!
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+      {/block:IfGoogleAnalyticsID}
+    
+    
+    <style type="text/css">
+      body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, iframe, a, img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+caption, th {
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+abbr, acronym {
+  border: 0;
+}
+
+a {
+  color: inherit;
+  font-style: normal;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body {
+  color: {color:Text};
+  background-color: {color:Background};
+  line-height: 1.8em;
+}
+
+.main {
+  width: 780px;
+  margin: 0 auto;
+}
+
+.header {
+  overflow-y: auto;
+}
+.header .header-blog-information {
+  float: left;
+}
+.header .header-blog-information .header-title {
+  font-size: 30px;
+}
+.header .header-blog-information .header-byline {
+  font-size: 20px;
+}
+.header .header-author-information {
+  float: right;
+}
+.header .header-author-information .header-description {
+  line-height: 1.2em;
+  max-width: 390px;
+}
+
+.post {
+  padding: 10px;
+  margin-bottom: 40px;
+  background-color: {color:Post Border};
+}
+.post .post-content {
+  display: relative;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.post .tags {
+  display: inline;
+}
+.post .tags .tag {
+  display: inline;
+  font-weight: bold;
+}
+.post.photo .photo-image {
+  width: 100%;
+  vertical-align: bottom;
+}
+.post.quote .quote-source {
+  text-align: right;
+}
+
+      
+      {CustomCSS}
+    </style>
+  </head>
+  
+  <body>
+    <div class="main">
+      <div class="header">
+  <div class="header-blog-information">
+    <h1 class="header-title">{Title}</h1>
+    
+    {block:IfByline}
+      <h2 class="header-byline"><span class="by">by:</span> {text:Byline}</h2>
+    {/block:IfByline}
+  </div>
+  
+  <div class="header-author-information">
+    {block:IfVisibleEmail}
+      <h3 class="header-contact">
+        <span class="header-email">{text:VisibleEmail}</span>
+      </h3>
+    {/block:IfVisibleEmail}
+    
+    {block:Description}
+      <h3 class="header-description">{Description}</h2>
+    {/block:Description}
+  </div>
+  
+  {block:HasPages}
+    <ul class="header-navigation">
+      {block:Pages}
+        <li class="navigation-link">
+          <a href="{URL}">{Label}</a>
+        </li>
+      {/block:Pages}
+    </ul>
+  {/block:HasPages}
+</div>
+      <ul class="posts">
+  {block:Posts}
+    {block:Text}
+  <!--
+    text
+  -->
+  
+  <li class="post text {TagsAsClasses}">
+    <div class="post-content">
+      
+  {Body}
+  
+  {block:Title}
+    <span class="title">{Title}</span>
+  {/block:Title}
+
+    </div>
+    
+    <div class="post-footer">
+      <h3 class="title">
+        <a href="{Permalink}" target="_new">
+          
+          
+        </a>
+      </h3>
+      
+      {block:HasTags}
+        <ul class="tags">
+          {block:Tags}
+            <li class="tag">
+              <a href="{TagURLChrono}" class="tag-link">#{Tag}</a>
+            </li>
+          {/block:Tags}
+        </ul>
+      {/block:HasTags}
+    </div>
+    
+    {block:PermalinkPage}
+      
+    {/block:PermalinkPage}
+  </li>
+{/block:Text}
+    {block:Photo}
+  <!--
+    photo
+  -->
+  
+  <li class="post photo {TagsAsClasses}">
+    <div class="post-content">
+      
+  <img class="photo-image" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" />
+
+    </div>
+    
+    <div class="post-footer">
+      <h3 class="title">
+        <a href="{Permalink}" target="_new">
+          
+  {block:Caption}
+    <span class="caption">{Caption}</span>
+  {/block:Caption}
+
+        </a>
+      </h3>
+      
+      {block:HasTags}
+        <ul class="tags">
+          {block:Tags}
+            <li class="tag">
+              <a href="{TagURLChrono}" class="tag-link">#{Tag}</a>
+            </li>
+          {/block:Tags}
+        </ul>
+      {/block:HasTags}
+    </div>
+    
+    {block:PermalinkPage}
+      
+    {/block:PermalinkPage}
+  </li>
+{/block:Photo}
+  {/block:Posts}
+</ul>
+
+<div class="post-navigation">
+  {block:PreviousPage}
+    <a class="previous" href="{PreviousPage}">&laquo;</a>
+  {/block:PreviousPage}
+
+  <a class="archive" href="/archive">Archive</a>
+  
+  {block:NextPage}
+    <a class="next" href="{NextPage}">&raquo;</a>
+  {/block:NextPage}
+</div>
+      <div class="footer">
+  <a href="https://github.com/zachsnow/whistlingwestward.com/">&copy; Snow</a>
+</div>
+    </div>
+  </body>
+</html>

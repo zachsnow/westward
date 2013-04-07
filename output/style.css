@@ -1,0 +1,103 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, iframe, a, img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+caption, th {
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+abbr, acronym {
+  border: 0;
+}
+
+a {
+  color: inherit;
+  font-style: normal;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body {
+  color: {color:Text};
+  background-color: {color:Background};
+  line-height: 1.8em;
+}
+
+.main {
+  width: 780px;
+  margin: 0 auto;
+}
+
+.header {
+  overflow-y: auto;
+}
+.header .header-blog-information {
+  float: left;
+}
+.header .header-blog-information .header-title {
+  font-size: 30px;
+}
+.header .header-blog-information .header-byline {
+  font-size: 20px;
+}
+.header .header-author-information {
+  float: right;
+}
+.header .header-author-information .header-description {
+  line-height: 1.2em;
+  max-width: 390px;
+}
+
+.post {
+  padding: 10px;
+  margin-bottom: 40px;
+  background-color: {color:Post Border};
+}
+.post .post-content {
+  display: relative;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.post .tags {
+  display: inline;
+}
+.post .tags .tag {
+  display: inline;
+  font-weight: bold;
+}
+.post.photo .photo-image {
+  width: 100%;
+  vertical-align: bottom;
+}
+.post.quote .quote-source {
+  text-align: right;
+}

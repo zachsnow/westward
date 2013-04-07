@@ -1,0 +1,37 @@
+.post {
+  padding: 10px;
+  margin-bottom: 40px;
+  background-color: #{'{color:Post Border}'};
+  
+  .post-content {
+    display: relative;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .post-title {
+    
+  }
+  
+  .tags {
+    display: inline;
+    
+    .tag {
+      display: inline;
+      font-weight: bold;
+    }
+  }
+  
+  &.photo {
+    .photo-image {
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+  
+  &.quote {
+    .quote-source {
+      text-align: right;
+    }
+  }
+}
