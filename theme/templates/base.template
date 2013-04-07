@@ -35,6 +35,7 @@
       <meta name="text:Visible Email" content="" />
       
       <meta name="text:Google Analytics ID" content="" />
+      <meta name="text:Typekit ID" content="" />
     {% endblock %}
     
     {% block google_analytics %}
@@ -52,6 +53,13 @@
           })();
         </script>
       {/block:IfGoogleAnalyticsID}
+    {% endblock %}
+    
+    {% block typekit %}
+      {block:IfTypekitID}
+        <script type="text/javascript" src="//use.typekit.net/{text:TypekitID}.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+      {/block:IfTypekitID}
     {% endblock %}
     
     <style type="text/css">

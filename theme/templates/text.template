@@ -4,8 +4,10 @@
 
 {% block content %}
   {Body}
-  
+{% endblock %}
+
+{% block title %}
   {block:Title}
-    <span class="title">{Title}</span>
+    <span class="text-title">{Title}</span>
   {/block:Title}
 {% endblock %}

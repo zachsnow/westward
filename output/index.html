@@ -35,6 +35,7 @@
       <meta name="text:Visible Email" content="" />
       
       <meta name="text:Google Analytics ID" content="" />
+      <meta name="text:Typekit ID" content="" />
     
     
     
@@ -52,6 +53,13 @@
           })();
         </script>
       {/block:IfGoogleAnalyticsID}
+    
+    
+    
+      {block:IfTypekitID}
+        <script type="text/javascript" src="//use.typekit.net/{text:TypekitID}.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+      {/block:IfTypekitID}
     
     
     <style type="text/css">
@@ -106,6 +114,7 @@ a {
 body {
   color: {color:Text};
   background-color: {color:Background};
+  font-family: "cronos-pro-subhead";
   line-height: 1.8em;
 }
 
@@ -128,6 +137,7 @@ body {
 }
 .header .header-author-information {
   float: right;
+  text-align: right;
 }
 .header .header-author-information .header-description {
   line-height: 1.2em;
@@ -154,6 +164,10 @@ body {
 .post.photo .photo-image {
   width: 100%;
   vertical-align: bottom;
+  opacity: 0.9;
+}
+.post.photo:hover .photo-image {
+  opacity: 1;
 }
 .post.quote .quote-source {
   text-align: right;
@@ -208,10 +222,6 @@ body {
     <div class="post-content">
       
   {Body}
-  
-  {block:Title}
-    <span class="title">{Title}</span>
-  {/block:Title}
 
     </div>
     
@@ -219,7 +229,10 @@ body {
       <h3 class="title">
         <a href="{Permalink}" target="_new">
           
-          
+  {block:Title}
+    <span class="text-title">{Title}</span>
+  {/block:Title}
+
         </a>
       </h3>
       
