@@ -1,4 +1,4 @@
-$contentWidth: 780px;
+$contentWidth: 980px;
 
 $backgroundColor: #{'{color:Background Color}'};
 $primaryTextColor: #{'{color:Primary Text Color}'};
@@ -7,6 +7,9 @@ $highlightColor: #{'{color:Highlight Color}'};
 
 $postBackgroundColor: #{'{color:Post Background Color}'};
 $postBorderColor: #{'{color:Post Border Color}'};
+
+$headerFontFamily: #{'{text:Header Font Family}'};
+$textFontFamily: #{'{text:Text Font Family}'};
 
 @import "reset";
 @import "general";

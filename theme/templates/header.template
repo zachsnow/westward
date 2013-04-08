@@ -1,8 +1,8 @@
 {% import 'macros.template' as macros %}
 
-<div class="header font-headers {{ macros.has_first_photo(False)  }}">
+<div class="header {{ macros.has_first_photo(False)  }}">
   <div class="header-mast">
-    <h1 class="header-title font-headers">
+    <h1 class="header-title">
       <a href="/">{Title}</a>
     </h1>
   </div>

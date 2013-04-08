@@ -11,6 +11,8 @@
     
     width: $contentWidth - 40px;
     
+    font-family: $headerFontFamily;
+    
     .header-title {
       font-size: 80px;
       width: 1px; /* Force a wrap at space. */

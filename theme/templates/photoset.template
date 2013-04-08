@@ -9,5 +9,5 @@
     {/block:Photos}
   </ul>
   
-  <div class="photo-caption font-headers">{Caption}</div>
+  <div class="photo-caption">{Caption}</div>
 {% endblock %}

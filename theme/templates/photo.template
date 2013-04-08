@@ -7,6 +7,6 @@
     {% include 'photoset-photo.template' %}
   </ul>
   
-  <div class="photo-caption font-headers">{Caption}</div>
+  <div class="photo-caption">{Caption}</div>
 {% endblock %}
 

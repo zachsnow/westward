@@ -40,6 +40,7 @@
 <meta name="text:Byline Link" content="" />
 
 <meta name="text:Google Analytics ID" content="" />
+
 <meta name="text:Typekit ID" content="" />
     
     
@@ -119,6 +120,7 @@ a {
 body {
   color: {color:Primary Text Color};
   background-color: {color:Background Color};
+  font-family: {text:Text Font Family};
   line-height: 1.8em;
 }
 
@@ -161,7 +163,7 @@ b, strong {
 }
 
 .header {
-  width: 780px;
+  width: 980px;
   margin: 0 auto;
   position: relative;
   height: 180px;
@@ -170,7 +172,8 @@ b, strong {
   position: absolute;
   top: 20px;
   left: 0;
-  width: 740px;
+  width: 940px;
+  font-family: {text:Header Font Family};
 }
 .header .header-mast .header-title {
   font-size: 80px;
@@ -199,7 +202,7 @@ b, strong {
   margin-bottom: 20px;
 }
 .posts .post .post-content {
-  max-width: 780px;
+  max-width: 980px;
   margin: 0 auto;
   display: relative;
 }
@@ -207,7 +210,7 @@ b, strong {
   margin-top: 20px;
 }
 .posts .post .post-footer .post-tags {
-  max-width: 780px;
+  max-width: 980px;
   margin: 0 auto;
   text-align: center;
 }
@@ -226,6 +229,11 @@ b, strong {
 .posts .post.photo .photo-caption, .posts .post.photoset .photo-caption {
   text-align: center;
   margin-top: 20px;
+  font-size: 12px;
+  /* Assumes that the first paragraph in the caption is the "real" title. */
+}
+.posts .post.photo .photo-caption p:first, .posts .post.photoset .photo-caption p:first {
+  font-family: {text:Header Font Family};
   font-size: 30px;
 }
 .posts .post.photo .photoset-photos .photoset-photo .photo-image, .posts .post.photoset .photoset-photos .photoset-photo .photo-image {
@@ -324,7 +332,7 @@ b, strong {
 .notes .tumblr-notes .notes {
   margin: 0 auto;
   text-align: left;
-  width: 780px;
+  width: 980px;
 }
 .notes .tumblr-notes .note {
   height: 32px;
@@ -350,11 +358,11 @@ b, strong {
     </style>
   </head>
   
-  <body class="font-text">
+  <body>
     <div class="main">
       
 
-<div class="header font-headers 
+<div class="header 
   
     {block:Posts}
   
@@ -370,7 +378,7 @@ b, strong {
   
 ">
   <div class="header-mast">
-    <h1 class="header-title font-headers">
+    <h1 class="header-title">
       <a href="/">{Title}</a>
     </h1>
   </div>
@@ -457,7 +465,7 @@ b, strong {
 </li>
   </ul>
   
-  <div class="photo-caption font-headers">{Caption}</div>
+  <div class="photo-caption">{Caption}</div>
 
     </div>
     
@@ -516,7 +524,7 @@ b, strong {
     {/block:Photos}
   </ul>
   
-  <div class="photo-caption font-headers">{Caption}</div>
+  <div class="photo-caption">{Caption}</div>
 
     </div>
     

@@ -48,7 +48,13 @@
       .photo-caption {
         text-align: center;
         margin-top: 20px;
-        font-size: 30px;
+        font-size: 12px;
+        
+        /* Assumes that the first paragraph in the caption is the "real" title. */
+        p:first {
+          font-family: $headerFontFamily;
+          font-size: 30px;
+        }
       }
       
       .photoset-photos {
