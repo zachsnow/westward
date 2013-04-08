@@ -81,6 +81,6 @@ if __name__ == '__main__':
         print 'Done.'
         sys.exit(0)
     except Exception as e:
-        print >> sys.stderr, 'Error: %s'
+        print >> sys.stderr, 'Error: %s' % e
         print >> sys.stderr, 'Failed.'
         sys.exit(1)
