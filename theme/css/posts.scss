@@ -21,6 +21,7 @@
       margin-top: 10px;
       
       .post-tags {
+        font-size: 12px;
         max-width: $contentWidth;
         margin: 0 auto;
         text-align: center;
@@ -48,13 +49,17 @@
       .photo-caption {
         text-align: center;
         margin-top: 20px;
-        font-size: 12px;
+        font-size: 13px;
         
         /* Assumes that the first paragraph in the caption is the "real" title. */
         p:first-child {
           @include headerFontFamily;
           font-size: 30px;
           padding-bottom: 10px;
+          
+          &:last-child {
+            padding-bottom: 0;
+          }
         }
       }
       

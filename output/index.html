@@ -219,6 +219,7 @@ b, strong {
   margin-top: 10px;
 }
 .posts .post .post-footer .post-tags {
+  font-size: 12px;
   max-width: 980px;
   margin: 0 auto;
   text-align: center;
@@ -238,13 +239,16 @@ b, strong {
 .posts .post.photo .photo-caption, .posts .post.photoset .photo-caption {
   text-align: center;
   margin-top: 20px;
-  font-size: 12px;
+  font-size: 13px;
   /* Assumes that the first paragraph in the caption is the "real" title. */
 }
 .posts .post.photo .photo-caption p:first-child, .posts .post.photoset .photo-caption p:first-child {
   font-family: {block:IfTypekitHeaderFontFamily}"{text:Typekit Header Font Family}", {/block:IfTypekitHeaderFontFamily}sans-serif;
   font-size: 30px;
   padding-bottom: 10px;
+}
+.posts .post.photo .photo-caption p:first-child:last-child, .posts .post.photoset .photo-caption p:first-child:last-child {
+  padding-bottom: 0;
 }
 .posts .post.photo .photoset-photos .photoset-photo .photo-image, .posts .post.photoset .photoset-photos .photoset-photo .photo-image {
   width: 100%;
@@ -356,15 +360,21 @@ b, strong {
   padding-left: 10px;
   display: inline-block;
 }
+.notes .tumblr-notes .note .clear {
+  display: none;
+}
 .notes .tumblr-notes .note blockquote {
   display: inline;
   padding: 0;
+  font-size: 11px;
 }
 .notes .tumblr-notes .note blockquote:before {
   content: "“";
+  margin-right: -2px;
 }
 .notes .tumblr-notes .note blockquote:after {
   content: "”";
+  margin-left: -2px;
 }
 .notes .tumblr-notes .note a {
   line-height: 1.2em;
