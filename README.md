@@ -1,9 +1,9 @@
 # Westward
 
-**This is not actually done. At all.**
-
 **Westward** is the Tumblr theme for [Whistling Westward](http://whistlingwestward.com/),
 photography by Molly Peppel Snow. It was made by [Zach Snow](http://zachsnow.com/).
+Westward is still very much a work in progress; for an example that shows how it looks
+so far, for various post types, see [that's me](http://therealzachsnow.tumblr.com).
 
 **Note** If you just want to use the theme as-is, simply download the
 [main theme](https://github.com/zachsnow/whistlingwestward/tree/master/output/index.html)
@@ -51,7 +51,8 @@ Next you need to set up a the custom mobile theme by creating a page with
 the URL `/iphone-theme/`. Click **Add a page** and select **Custom Layout**
 from the dropdown menu. Give the page a URL of `/iphone-theme/`, and then
 set the **Custom HTML** to the contents of `iphone-theme.html`. Note
-that as of now the 
+that as of now the mobile theme is the exact same as the main theme, so
+you really don't need to do this step for now.
 
 ## <a name="configuring"></a>Configuring
 
