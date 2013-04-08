@@ -61,25 +61,25 @@ are pretty obvious, but here's some information about the rest.
 
 ### Byline
 
-The **Byline** settings change how the footer looks.  In the example
-at [that's me](http://therealzachsnow.tumblr.com) the **Byline Prefix**
-is set to "Theme by", the **Byline** is set to "Zach Snow", and the
-**Byline Link** is set to "[http://zachsnow.com/](http://zachsnow.com/)".
+The `Byline` settings change how the footer looks.  In the example
+at [that's me](http://therealzachsnow.tumblr.com) the `Byline Prefix`
+is set to "Theme by", the `Byline` is set to "Zach Snow", and the
+`Byline Link` is set to "[http://zachsnow.com/](http://zachsnow.com/)".
 If you want, you can use a `mailto:` link.  And if you don't want a link
-at all, just don't set **Byline Link**. In fact, all of the **Byline** settings
+at all, just don't set `Byline Link`. In fact, all of the `Byline` settings
 are optional.
 
 ### Google Analytics
 
 Google Analytics integration is as per usual, just grab your account
-ID and set ** Google Analytics ID**.
+ID and set `Google Analytics ID`.
 
 ### Typekit
 
 There are two customizable Typekit fonts, one for headers and one for
 all the rest of the text. To set these up, first create a new kit and
 grab the kit "identifier" (the basename of the embed code Javascript file)
-and set **Typekit ID**.
+and set `Typekit ID`.
 
 Next, pick your fonts. For the header font add the selector `.font-headers`.
 For the other all-around font add the selector `.font-text`. Of course,
