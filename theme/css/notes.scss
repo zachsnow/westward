@@ -34,13 +34,23 @@
       .action {
         font-size: 11px;
         padding-left: 10px;
-        
         display: inline-block;
-        line-height: 1.2em;
+      }
+      
+      blockquote {
+        display: inline;
+        padding: 0;
         
-        a {
-          @include link();
+        &:before {
+          content: "“";
         }
+        &:after {
+          content: "”";
+        }
+      }
+      
+      a {
+        @include link();
       }
     }
   }

@@ -42,6 +42,10 @@
 <meta name="text:Google Analytics ID" content="" />
 
 <meta name="text:Typekit ID" content="" />
+<meta name="text:Typekit Header Font Family" content="" />
+<meta name="text:Typekit Text Font Family" content="" />
+
+<meta name="if:Wide" content="0" />
     
     
     
@@ -120,8 +124,8 @@ a {
 body {
   color: {color:Primary Text Color};
   background-color: {color:Background Color};
-  font-family: {text:Text Font Family};
   line-height: 1.8em;
+  font-family: {block:IfTypekitTextFontFamily}"{text:Typekit Text Font Family}", {/block:IfTypekitTextFontFamily}sans-serif";
 }
 
 .footer {
@@ -162,6 +166,11 @@ b, strong {
   font-weight: bold;
 }
 
+#tumblr_controls {
+  top: 25px !important;
+  right: 15px !important;
+}
+
 .header {
   width: 980px;
   margin: 0 auto;
@@ -173,7 +182,7 @@ b, strong {
   top: 20px;
   left: 0;
   width: 940px;
-  font-family: {text:Header Font Family};
+  font-family: {block:IfTypekitHeaderFontFamily}"{text:Typekit Header Font Family}", {/block:IfTypekitHeaderFontFamily}sans-serif;
 }
 .header .header-mast .header-title {
   font-size: 80px;
@@ -207,7 +216,7 @@ b, strong {
   display: relative;
 }
 .posts .post .post-footer {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .posts .post .post-footer .post-tags {
   max-width: 980px;
@@ -232,9 +241,10 @@ b, strong {
   font-size: 12px;
   /* Assumes that the first paragraph in the caption is the "real" title. */
 }
-.posts .post.photo .photo-caption p:first, .posts .post.photoset .photo-caption p:first {
-  font-family: {text:Header Font Family};
+.posts .post.photo .photo-caption p:first-child, .posts .post.photoset .photo-caption p:first-child {
+  font-family: {block:IfTypekitHeaderFontFamily}"{text:Typekit Header Font Family}", {/block:IfTypekitHeaderFontFamily}sans-serif;
   font-size: 30px;
+  padding-bottom: 10px;
 }
 .posts .post.photo .photoset-photos .photoset-photo .photo-image, .posts .post.photoset .photoset-photos .photoset-photo .photo-image {
   width: 100%;
@@ -345,9 +355,18 @@ b, strong {
   font-size: 11px;
   padding-left: 10px;
   display: inline-block;
-  line-height: 1.2em;
 }
-.notes .tumblr-notes .note .action a {
+.notes .tumblr-notes .note blockquote {
+  display: inline;
+  padding: 0;
+}
+.notes .tumblr-notes .note blockquote:before {
+  content: "“";
+}
+.notes .tumblr-notes .note blockquote:after {
+  content: "”";
+}
+.notes .tumblr-notes .note a {
   line-height: 1.2em;
   display: inline-block;
   border-bottom: 1px solid {color:Post Border Color};

@@ -11,7 +11,7 @@
     
     width: $contentWidth - 40px;
     
-    font-family: $headerFontFamily;
+    @include headerFontFamily();
     
     .header-title {
       font-size: 80px;

@@ -13,3 +13,7 @@
 <meta name="text:Google Analytics ID" content="" />
 
 <meta name="text:Typekit ID" content="" />
+<meta name="text:Typekit Header Font Family" content="" />
+<meta name="text:Typekit Text Font Family" content="" />
+
+<meta name="if:Wide" content="0" />

@@ -8,8 +8,16 @@ $highlightColor: #{'{color:Highlight Color}'};
 $postBackgroundColor: #{'{color:Post Background Color}'};
 $postBorderColor: #{'{color:Post Border Color}'};
 
-$headerFontFamily: #{'{text:Header Font Family}'};
-$textFontFamily: #{'{text:Text Font Family}'};
+$headerFontFamily: #{'{block:IfTypekitHeaderFontFamily}"{text:Typekit Header Font Family}", {/block:IfTypekitHeaderFontFamily}sans-serif'};
+$textFontFamily: #{'{block:IfTypekitTextFontFamily}"{text:Typekit Text Font Family}", {/block:IfTypekitTextFontFamily}sans-serif"'};
+
+@mixin headerFontFamily(){
+  font-family: $headerFontFamily;
+}
+
+@mixin textFontFamily(){
+  font-family: $textFontFamily;
+}
 
 @import "reset";
 @import "general";

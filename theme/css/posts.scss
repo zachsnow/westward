@@ -18,7 +18,7 @@
     }
     
     .post-footer {
-      margin-top: 20px;
+      margin-top: 10px;
       
       .post-tags {
         max-width: $contentWidth;
@@ -51,9 +51,10 @@
         font-size: 12px;
         
         /* Assumes that the first paragraph in the caption is the "real" title. */
-        p:first {
-          font-family: $headerFontFamily;
+        p:first-child {
+          @include headerFontFamily;
           font-size: 30px;
+          padding-bottom: 10px;
         }
       }
       

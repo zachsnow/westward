@@ -1,8 +1,9 @@
 body {
   color: $primaryTextColor; 
   background-color: $backgroundColor;
-  font-family: $textFontFamily;
   line-height: 1.8em;
+  
+  @include textFontFamily();
 }
 
 @mixin link(){
@@ -47,4 +48,9 @@ i, em {
 
 b, strong {
   font-weight: bold;
+}
+
+#tumblr_controls {
+  top: 25px !important;
+  right: 15px !important;
 }
