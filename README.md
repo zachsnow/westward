@@ -6,8 +6,8 @@ Westward is still very much a work in progress; for an example that shows how it
 so far, for various post types, see [that's me](http://therealzachsnow.tumblr.com).
 
 **Note** If you just want to use the theme as-is, simply download the
-[main theme](https://github.com/zachsnow/whistlingwestward/tree/master/output/index.html)
-and [iphone theme](https://github.com/zachsnow/whistlingwestward/tree/master/output/iphone-theme.html).
+[main theme](https://github.com/zachsnow/westward/tree/master/output/index.html)
+and [iphone theme](https://github.com/zachsnow/whistling/tree/master/output/iphone-theme.html).
 For instructions on how to install these files, see [Installation](#installing),
 below.
 
