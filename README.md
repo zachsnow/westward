@@ -1,9 +1,9 @@
-# Whistling Westward
+# Westward
 
 **This is not actually done. At all.**
 
-The Tumblr theme for [Whistling Westward](http://whistlingwestward.com/), by
-[Zach Snow](http://zachsnow.com/).
+**Westward** is the Tumblr theme for [Whistling Westward](http://whistlingwestward.com/),
+photography by Molly Peppel Snow. It was made by [Zach Snow](http://zachsnow.com/).
 
 **Note** If you just want to use the theme as-is, simply download the
 [main theme](https://github.com/zachsnow/whistlingwestward/tree/master/output/index.html)
@@ -50,4 +50,36 @@ to see how it looks. Assuming you are happy with the result, **Save** it.
 Next you need to set up a the custom mobile theme by creating a page with
 the URL `/iphone-theme/`. Click **Add a page** and select **Custom Layout**
 from the dropdown menu. Give the page a URL of `/iphone-theme/`, and then
-set the **Custom HTML** to the contents of `iphone-theme.html`.
+set the **Custom HTML** to the contents of `iphone-theme.html`. Note
+that as of now the 
+
+## <a name="configuring"></a>Configuring
+
+Now that the theme is installed, you need to configure it.  The colors
+are pretty obvious, but here's some information about the rest.
+
+### Byline
+
+The **Byline** settings change how the footer looks.  In the example
+at [that's me](http://therealzachsnow.tumblr.com) the **Byline Prefix**
+is set to "Theme by", the **Byline** is set to "Zach Snow", and the
+**Byline Link** is set to "[http://zachsnow.com/](http://zachsnow.com/)".
+If you want, you can use a `mailto:` link.  And if you don't want a link
+at all, just don't set **Byline Link**. In fact, all of the **Byline** settings
+are optional.
+
+### Google Analytics
+
+Google Analytics integration is as per usual, just grab your account
+ID and set ** Google Analytics ID**.
+
+### Typekit
+
+There are two customizable Typekit fonts, one for headers and one for
+all the rest of the text. To set these up, first create a new kit and
+grab the kit "identifier" (the basename of the embed code Javascript file)
+and set **Typekit ID**.
+
+Next, pick your fonts. For the header font add the selector `.font-headers`.
+For the other all-around font add the selector `.font-text`. Of course,
+you can add all kinds of other selectors, too, if you want to get crazy.
