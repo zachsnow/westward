@@ -1,5 +1,7 @@
 <li class="photoset-photo">
-  <img class="photo-image" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"
-    width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"
-  />
+  <a href="{Permalink}">
+    <img class="photo-image" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"
+      width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"
+    />
+  </a>
 </li>

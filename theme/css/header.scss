@@ -1,33 +1,31 @@
 .header {
-  overflow-y: auto;
-  font-family: "caflisch-script-pro";
-
+  width: $contentWidth;
+  margin: 0 auto;
+  
+  position: relative;
+  
   .header-mast {
-    float: left;
-    padding: 50px 0 0 50px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    
+    width: $contentWidth - 40px;
     
     .header-title {
-      font-size: 60px;
-      width: 1px;
-      line-height: 0.6em;
-    }
-    
-    .header-byline {
-      font-size: 20px;
-      padding-top: 10px;
-      padding-left: 5px;
-    }
+      font-size: 80px;
+      width: 1px; /* Force a wrap at space. */
+      line-height: 0.7em;
+      text-shadow: 1px 1px 0 $backgroundColor;
+    }    
   }
   
-  .header-author {
-    float: right;
-    text-align: right;
-    display: none;
+  height: 180px;
+  &.has-first-photo {
+    height: 20px;
     
-    .header-contact {}
-    .header-description {
-      line-height: 1.2em;
-      max-width: $contentWidth / 2;
+    .header-mast {
+      top: 40px;
+      left: 20px;
     }
   }
 }

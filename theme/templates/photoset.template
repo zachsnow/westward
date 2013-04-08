@@ -11,4 +11,3 @@
   
   <div class="photo-caption font-headers">{Caption}</div>
 {% endblock %}
-

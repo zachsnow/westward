@@ -1,8 +1,10 @@
+{% import 'macros.template' as macros %}
+
 {block:{{ self.type()|capitalize }}}
   <!-- TODO: there's got to be a better way! Squagels!
     {% block type %}{{ required() }}{% endblock %}
   -->
-  <li class="post {{ self.type()|css }} {TagsAsClasses}">
+  <li class="post {{ self.type()|css }} {TagsAsClasses} {{ macros.has_first_photo(True) }}">
     <div class="post-content">
       {% block content %}
       {% endblock %}
@@ -13,7 +15,7 @@
         <ul class="post-tags">
           {block:Tags}
             <li class="post-tag">
-              <a href="{TagURL}">#{Tag}</a>
+              <a class="post-tag-link" href="{TagURL}">{Tag}</a>
             </li>
           {/block:Tags}
         </ul>

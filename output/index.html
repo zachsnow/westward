@@ -37,7 +37,6 @@
 
 <meta name="text:Byline" content="" />
 <meta name="text:Visible Email" content="" />
-<meta name="text:No Notes Message" content="~" />
 
 <meta name="text:Google Analytics ID" content="" />
 <meta name="text:Typekit ID" content="" />
@@ -119,13 +118,16 @@ a {
 body {
   color: {color:Primary Text Color};
   background-color: {color:Background Color};
-  font-family: "cronos-pro-subhead";
   line-height: 1.8em;
 }
 
 .footer {
+  margin-bottom: 20px;
   text-align: center;
   color: {color:Secondary Text Color};
+}
+.footer .footer-byline {
+  color: {color:Primary Text Color};
 }
 
 i, em {
@@ -137,37 +139,36 @@ b, strong {
 }
 
 .header {
-  overflow-y: auto;
-  font-family: "caflisch-script-pro";
+  width: 780px;
+  margin: 0 auto;
+  position: relative;
+  height: 180px;
 }
 .header .header-mast {
-  float: left;
-  padding: 50px 0 0 50px;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 740px;
 }
 .header .header-mast .header-title {
-  font-size: 60px;
+  font-size: 80px;
   width: 1px;
-  line-height: 0.6em;
+  /* Force a wrap at space. */
+  line-height: 0.7em;
+  text-shadow: 1px 1px 0 {color:Background Color};
 }
-.header .header-mast .header-byline {
-  font-size: 20px;
-  padding-top: 10px;
-  padding-left: 5px;
+.header.has-first-photo {
+  height: 20px;
 }
-.header .header-author {
-  float: right;
-  text-align: right;
-  display: none;
-}
-.header .header-author .header-description {
-  line-height: 1.2em;
-  max-width: 390px;
+.header.has-first-photo .header-mast {
+  top: 40px;
+  left: 20px;
 }
 
 .posts .post {
-  margin-bottom: 40px;
   margin-right: 10px;
   margin-left: 10px;
+  margin-bottom: 40px;
   padding-bottom: 20px;
   border-bottom: 2px solid {color:Post Border Color};
   /* Shared between photo and photoset posts. */
@@ -181,7 +182,7 @@ b, strong {
   display: relative;
 }
 .posts .post .post-footer {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .posts .post .post-footer .post-tags {
   max-width: 780px;
@@ -189,12 +190,18 @@ b, strong {
   text-align: center;
 }
 .posts .post .post-footer .post-tags .post-tag {
-  display: inline;
-  font-weight: bold;
+  display: inline-block;
+  text-transform: capitalize;
+}
+.posts .post .post-footer .post-tags .post-tag .post-tag-link {
+  padding: 5px 10px;
+  margin: 0 10px;
   color: {color:Secondary Text Color};
 }
+.posts .post .post-footer .post-tags .post-tag .post-tag-link:hover {
+  background-color: {color:Highlight Color};
+}
 .posts .post.photo .photo-caption, .posts .post.photoset .photo-caption {
-  font-family: "caflisch-script-pro";
   text-align: center;
   margin-top: 20px;
   font-size: 30px;
@@ -275,18 +282,44 @@ b, strong {
 }
 
 .notes {
+  margin-top: 5px;
   text-align: center;
   color: {color:Secondary Text Color};
 }
-.notes .note-count.no-notes {
+.notes .note-count {
   display: inline-block;
-  padding: 0 15px;
+  padding: 5px 12px 5px 10px;
+  /* The heart throws off the padding a bit. */
 }
-.notes .note-count.no-notes:hover {
+.notes .note-count:hover {
   background-color: {color:Highlight Color};
 }
-.notes .note-count.no-notes.has-notes {
-  display: none;
+.notes .tumblr-notes {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid {color:Post Border Color};
+}
+.notes .tumblr-notes .notes {
+  margin: 0 auto;
+  text-align: left;
+  width: 780px;
+}
+.notes .tumblr-notes .note {
+  height: 32px;
+  line-height: 32px;
+}
+.notes .tumblr-notes .note .avatar {
+  vertical-align: middle;
+}
+.notes .tumblr-notes .note .action {
+  font-size: 11px;
+  display: inline-block;
+  padding-left: 10px;
+  line-height: 1.2em;
+}
+.notes .tumblr-notes .note .action a {
+  display: inline-block;
+  border-bottom: 1px solid {color:Post Border Color};
 }
 
       
@@ -294,38 +327,50 @@ b, strong {
     </style>
   </head>
   
-  <body>
+  <body class="font-text">
     <div class="main">
-      <div class="header">
+      
+
+<div class="header font-headers 
+  
+    {block:Posts}
+  
+  
+  {block:Post1}
+    first-post
+    {block:Photo}has-first-photo{/block:Photo}
+    {block:Photoset}has-first-photo{/block:Photoset}
+  {/block:Post1}
+  
+  
+    {/block:Posts}
+  
+">
   <div class="header-mast">
     <h1 class="header-title font-headers">
       <a href="/">{Title}</a>
     </h1>
-    
-    {block:IfByline}
-      <h2 class="header-byline">{text:Byline}</h2>
-    {/block:IfByline}
-  </div>
-  
-  <div class="header-author">
-    {block:IfVisibleEmail}
-      <h3 class="header-contact">
-        <span class="header-email">{text:Visible Email}</span>
-      </h3>
-    {/block:IfVisibleEmail}
-    
-    {block:Description}
-      <h3 class="header-description">{Description}</h2>
-    {/block:Description}
   </div>
 </div>
       <ul class="posts">
   {block:Posts}
-    {block:Text}
+    
+
+{block:Text}
   <!-- TODO: there's got to be a better way! Squagels!
     text
   -->
-  <li class="post text {TagsAsClasses}">
+  <li class="post text {TagsAsClasses} 
+  
+  
+  {block:Post1}
+    first-post
+    {block:Photo}has-first-photo{/block:Photo}
+    {block:Photoset}has-first-photo{/block:Photoset}
+  {/block:Post1}
+  
+  
+">
     <div class="post-content">
       
   <div class="text-body">{Body}</div>
@@ -341,36 +386,51 @@ b, strong {
         <ul class="post-tags">
           {block:Tags}
             <li class="post-tag">
-              <a href="{TagURL}">#{Tag}</a>
+              <a class="post-tag-link" href="{TagURL}">{Tag}</a>
             </li>
           {/block:Tags}
         </ul>
       {/block:HasTags}
       
       <div class="notes">
-  <a href="{Permalink}" class="note-count no-notes {block:NoteCount}has-notes{/block:NoteCount}" target="_new">{text:No Notes Message}</a>
+  
+    <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
+  
   {block:PostNotes}
-    {block:NoteCount}
-      <a class="note-count" href="{Permalink}" target="_new">{NotesCountWithLabel}</a>
-    {/block:NoteCount}
-    {PostNotes-64}
+    <div class="tumblr-notes">
+      {PostNotes-16}
+    </div>
   {/block:PostNotes}
 </div>
     </div>
   </li>
 {/block:Text}
-    {block:Photo}
+    
+
+{block:Photo}
   <!-- TODO: there's got to be a better way! Squagels!
     photo
   -->
-  <li class="post photo {TagsAsClasses}">
+  <li class="post photo {TagsAsClasses} 
+  
+  
+  {block:Post1}
+    first-post
+    {block:Photo}has-first-photo{/block:Photo}
+    {block:Photoset}has-first-photo{/block:Photoset}
+  {/block:Post1}
+  
+  
+">
     <div class="post-content">
       
   <ul class="photoset-photos">
     <li class="photoset-photo">
-  <img class="photo-image" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"
-    width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"
-  />
+  <a href="{Permalink}">
+    <img class="photo-image" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"
+      width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"
+    />
+  </a>
 </li>
   </ul>
   
@@ -383,37 +443,52 @@ b, strong {
         <ul class="post-tags">
           {block:Tags}
             <li class="post-tag">
-              <a href="{TagURL}">#{Tag}</a>
+              <a class="post-tag-link" href="{TagURL}">{Tag}</a>
             </li>
           {/block:Tags}
         </ul>
       {/block:HasTags}
       
       <div class="notes">
-  <a href="{Permalink}" class="note-count no-notes {block:NoteCount}has-notes{/block:NoteCount}" target="_new">{text:No Notes Message}</a>
+  
+    <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
+  
   {block:PostNotes}
-    {block:NoteCount}
-      <a class="note-count" href="{Permalink}" target="_new">{NotesCountWithLabel}</a>
-    {/block:NoteCount}
-    {PostNotes-64}
+    <div class="tumblr-notes">
+      {PostNotes-16}
+    </div>
   {/block:PostNotes}
 </div>
     </div>
   </li>
 {/block:Photo}
-    {block:Photoset}
+    
+
+{block:Photoset}
   <!-- TODO: there's got to be a better way! Squagels!
     photoset
   -->
-  <li class="post photoset {TagsAsClasses}">
+  <li class="post photoset {TagsAsClasses} 
+  
+  
+  {block:Post1}
+    first-post
+    {block:Photo}has-first-photo{/block:Photo}
+    {block:Photoset}has-first-photo{/block:Photoset}
+  {/block:Post1}
+  
+  
+">
     <div class="post-content">
       
   <ul class="photoset-photos">
     {block:Photos}
       <li class="photoset-photo">
-  <img class="photo-image" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"
-    width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"
-  />
+  <a href="{Permalink}">
+    <img class="photo-image" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"
+      width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"
+    />
+  </a>
 </li>
     {/block:Photos}
   </ul>
@@ -427,29 +502,42 @@ b, strong {
         <ul class="post-tags">
           {block:Tags}
             <li class="post-tag">
-              <a href="{TagURL}">#{Tag}</a>
+              <a class="post-tag-link" href="{TagURL}">{Tag}</a>
             </li>
           {/block:Tags}
         </ul>
       {/block:HasTags}
       
       <div class="notes">
-  <a href="{Permalink}" class="note-count no-notes {block:NoteCount}has-notes{/block:NoteCount}" target="_new">{text:No Notes Message}</a>
+  
+    <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
+  
   {block:PostNotes}
-    {block:NoteCount}
-      <a class="note-count" href="{Permalink}" target="_new">{NotesCountWithLabel}</a>
-    {/block:NoteCount}
-    {PostNotes-64}
+    <div class="tumblr-notes">
+      {PostNotes-16}
+    </div>
   {/block:PostNotes}
 </div>
     </div>
   </li>
 {/block:Photoset}
-    {block:Quote}
+    
+
+{block:Quote}
   <!-- TODO: there's got to be a better way! Squagels!
     quote
   -->
-  <li class="post quote {TagsAsClasses}">
+  <li class="post quote {TagsAsClasses} 
+  
+  
+  {block:Post1}
+    first-post
+    {block:Photo}has-first-photo{/block:Photo}
+    {block:Photoset}has-first-photo{/block:Photoset}
+  {/block:Post1}
+  
+  
+">
     <div class="post-content">
       
   <div class="quote-wrap">
@@ -469,29 +557,42 @@ b, strong {
         <ul class="post-tags">
           {block:Tags}
             <li class="post-tag">
-              <a href="{TagURL}">#{Tag}</a>
+              <a class="post-tag-link" href="{TagURL}">{Tag}</a>
             </li>
           {/block:Tags}
         </ul>
       {/block:HasTags}
       
       <div class="notes">
-  <a href="{Permalink}" class="note-count no-notes {block:NoteCount}has-notes{/block:NoteCount}" target="_new">{text:No Notes Message}</a>
+  
+    <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
+  
   {block:PostNotes}
-    {block:NoteCount}
-      <a class="note-count" href="{Permalink}" target="_new">{NotesCountWithLabel}</a>
-    {/block:NoteCount}
-    {PostNotes-64}
+    <div class="tumblr-notes">
+      {PostNotes-16}
+    </div>
   {/block:PostNotes}
 </div>
     </div>
   </li>
 {/block:Quote}
-    {block:Link}
+    
+
+{block:Link}
   <!-- TODO: there's got to be a better way! Squagels!
     link
   -->
-  <li class="post link {TagsAsClasses}">
+  <li class="post link {TagsAsClasses} 
+  
+  
+  {block:Post1}
+    first-post
+    {block:Photo}has-first-photo{/block:Photo}
+    {block:Photoset}has-first-photo{/block:Photoset}
+  {/block:Post1}
+  
+  
+">
     <div class="post-content">
       
   <div class="link-target">
@@ -512,19 +613,20 @@ b, strong {
         <ul class="post-tags">
           {block:Tags}
             <li class="post-tag">
-              <a href="{TagURL}">#{Tag}</a>
+              <a class="post-tag-link" href="{TagURL}">{Tag}</a>
             </li>
           {/block:Tags}
         </ul>
       {/block:HasTags}
       
       <div class="notes">
-  <a href="{Permalink}" class="note-count no-notes {block:NoteCount}has-notes{/block:NoteCount}" target="_new">{text:No Notes Message}</a>
+  
+    <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
+  
   {block:PostNotes}
-    {block:NoteCount}
-      <a class="note-count" href="{Permalink}" target="_new">{NotesCountWithLabel}</a>
-    {/block:NoteCount}
-    {PostNotes-64}
+    <div class="tumblr-notes">
+      {PostNotes-16}
+    </div>
   {/block:PostNotes}
 </div>
     </div>
@@ -547,9 +649,15 @@ b, strong {
   </div>
 {/block:Pagination}
       <div class="footer">
-  <a class="archive" href="/archive">Archive</a>
-  |
-  <a href="https://github.com/zachsnow/whistlingwestward.com/">&copy; Snow</a>
+  {block:IfByline}
+    <h3 class="footer-byline">{text:Byline}</h3>
+  {/block:IfByline}
+  
+  <div class="footer-links">
+    <a class="archive" href="/archive">Archive</a>
+    |
+    <a href="https://github.com/zachsnow/whistlingwestward.com/">&copy; Snow</a>
+  </div>
 </div>
     </div>
   </body>

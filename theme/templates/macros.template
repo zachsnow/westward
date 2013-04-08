@@ -1,0 +1,15 @@
+{% macro has_first_photo(in_posts) %}
+  {% if not in_posts %}
+    {block:Posts}
+  {% endif %}
+  
+  {block:Post1}
+    first-post
+    {block:Photo}has-first-photo{/block:Photo}
+    {block:Photoset}has-first-photo{/block:Photoset}
+  {/block:Post1}
+  
+  {% if not in_posts %}
+    {/block:Posts}
+  {% endif %}
+{% endmacro %}

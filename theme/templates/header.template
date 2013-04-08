@@ -1,23 +1,9 @@
-<div class="header">
+{% import 'macros.template' as macros %}
+
+<div class="header font-headers {{ macros.has_first_photo(False)  }}">
   <div class="header-mast">
     <h1 class="header-title font-headers">
       <a href="/">{Title}</a>
     </h1>
-    
-    {block:IfByline}
-      <h2 class="header-byline">{text:Byline}</h2>
-    {/block:IfByline}
-  </div>
-  
-  <div class="header-author">
-    {block:IfVisibleEmail}
-      <h3 class="header-contact">
-        <span class="header-email">{text:Visible Email}</span>
-      </h3>
-    {/block:IfVisibleEmail}
-    
-    {block:Description}
-      <h3 class="header-description">{Description}</h2>
-    {/block:Description}
   </div>
 </div>

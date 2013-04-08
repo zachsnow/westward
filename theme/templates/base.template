@@ -61,7 +61,7 @@
     </style>
   </head>
   
-  <body>
+  <body class="font-text">
     <div class="main">
       {% include 'header.template' %}
       {% include 'posts.template' %}

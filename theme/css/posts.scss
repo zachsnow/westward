@@ -1,15 +1,13 @@
 .posts {
   .post {
+    margin-right: 10px;
+    margin-left: 10px;
     margin-bottom: 40px;
     &:last-child {
       margin-bottom: 20px;
     }
     
-    margin-right: 10px;
-    margin-left: 10px;
-    
     padding-bottom: 20px;
-    
     border-bottom: 2px solid $postBorderColor;
     
     .post-content {
@@ -20,7 +18,7 @@
     }
     
     .post-footer {
-      margin-top: 10px;
+      margin-top: 20px;
       
       .post-tags {
         max-width: $contentWidth;
@@ -28,9 +26,19 @@
         text-align: center;
         
         .post-tag {
-          display: inline;
-          font-weight: bold;
-          color: $secondaryTextColor;
+          display: inline-block;
+          text-transform: capitalize;
+          
+          .post-tag-link {
+            padding: 5px 10px;
+            margin: 0 10px;
+            
+            color: $secondaryTextColor;
+            
+            &:hover {
+              background-color: $highlightColor;
+            }
+          }
         }
       }
     }
@@ -38,7 +46,6 @@
     /* Shared between photo and photoset posts. */
     &.photo, &.photoset {
       .photo-caption {
-        font-family: "caflisch-script-pro";
         text-align: center;
         margin-top: 20px;
         font-size: 30px;

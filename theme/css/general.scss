@@ -1,15 +1,19 @@
 body {
-  color: #{'{color:Primary Text Color}'}; 
-  background-color: #{'{color:Background Color}'};
-  font-family: "cronos-pro-subhead";
+  color: $primaryTextColor; 
+  background-color: $backgroundColor;
   line-height: 1.8em;
 }
 
 .footer {
+  margin-bottom: 20px;
   text-align: center;
-  color: #{'{color:Secondary Text Color}'};
+  color: $secondaryTextColor;
   
   .archive {}
+  
+  .footer-byline {
+    color: $primaryTextColor;
+  }
 }
 
 i, em {

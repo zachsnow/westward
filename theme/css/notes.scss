@@ -1,18 +1,46 @@
 .notes {
+  margin-top: 5px;
   text-align: center;
   color: $secondaryTextColor;
   
   .note-count {
-    &.no-notes {
-      display: inline-block;
-      padding: 0 15px;
-      
-      &:hover {
-        background-color: $highlightColor;
+    display: inline-block;
+    padding: 5px 12px 5px 10px; /* The heart throws off the padding a bit. */
+    
+    &:hover {
+      background-color: $highlightColor;
+    }
+  }
+  
+  .tumblr-notes {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid $postBorderColor;
+    
+    .notes {
+      margin: 0 auto;
+      text-align: left;
+      width: $contentWidth;
+    }
+    
+    .note {
+      height: 32px;
+      line-height: 32px;
+
+      .avatar {
+        vertical-align: middle;
       }
       
-      &.has-notes {
-        display: none;
+      .action {
+        font-size: 11px;
+        display: inline-block;
+        padding-left: 10px;
+        line-height: 1.2em;
+        
+        a {
+          display: inline-block;
+          border-bottom: 1px solid $postBorderColor;
+        }
       }
     }
   }

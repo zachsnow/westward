@@ -49,13 +49,16 @@ a {
 body {
   color: {color:Primary Text Color};
   background-color: {color:Background Color};
-  font-family: "cronos-pro-subhead";
   line-height: 1.8em;
 }
 
 .footer {
+  margin-bottom: 20px;
   text-align: center;
   color: {color:Secondary Text Color};
+}
+.footer .footer-byline {
+  color: {color:Primary Text Color};
 }
 
 i, em {
@@ -67,37 +70,36 @@ b, strong {
 }
 
 .header {
-  overflow-y: auto;
-  font-family: "caflisch-script-pro";
+  width: 780px;
+  margin: 0 auto;
+  position: relative;
+  height: 180px;
 }
 .header .header-mast {
-  float: left;
-  padding: 50px 0 0 50px;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 740px;
 }
 .header .header-mast .header-title {
-  font-size: 60px;
+  font-size: 80px;
   width: 1px;
-  line-height: 0.6em;
+  /* Force a wrap at space. */
+  line-height: 0.7em;
+  text-shadow: 1px 1px 0 {color:Background Color};
 }
-.header .header-mast .header-byline {
-  font-size: 20px;
-  padding-top: 10px;
-  padding-left: 5px;
+.header.has-first-photo {
+  height: 20px;
 }
-.header .header-author {
-  float: right;
-  text-align: right;
-  display: none;
-}
-.header .header-author .header-description {
-  line-height: 1.2em;
-  max-width: 390px;
+.header.has-first-photo .header-mast {
+  top: 40px;
+  left: 20px;
 }
 
 .posts .post {
-  margin-bottom: 40px;
   margin-right: 10px;
   margin-left: 10px;
+  margin-bottom: 40px;
   padding-bottom: 20px;
   border-bottom: 2px solid {color:Post Border Color};
   /* Shared between photo and photoset posts. */
@@ -111,7 +113,7 @@ b, strong {
   display: relative;
 }
 .posts .post .post-footer {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .posts .post .post-footer .post-tags {
   max-width: 780px;
@@ -119,12 +121,18 @@ b, strong {
   text-align: center;
 }
 .posts .post .post-footer .post-tags .post-tag {
-  display: inline;
-  font-weight: bold;
+  display: inline-block;
+  text-transform: capitalize;
+}
+.posts .post .post-footer .post-tags .post-tag .post-tag-link {
+  padding: 5px 10px;
+  margin: 0 10px;
   color: {color:Secondary Text Color};
 }
+.posts .post .post-footer .post-tags .post-tag .post-tag-link:hover {
+  background-color: {color:Highlight Color};
+}
 .posts .post.photo .photo-caption, .posts .post.photoset .photo-caption {
-  font-family: "caflisch-script-pro";
   text-align: center;
   margin-top: 20px;
   font-size: 30px;
@@ -205,16 +213,42 @@ b, strong {
 }
 
 .notes {
+  margin-top: 5px;
   text-align: center;
   color: {color:Secondary Text Color};
 }
-.notes .note-count.no-notes {
+.notes .note-count {
   display: inline-block;
-  padding: 0 15px;
+  padding: 5px 12px 5px 10px;
+  /* The heart throws off the padding a bit. */
 }
-.notes .note-count.no-notes:hover {
+.notes .note-count:hover {
   background-color: {color:Highlight Color};
 }
-.notes .note-count.no-notes.has-notes {
-  display: none;
+.notes .tumblr-notes {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid {color:Post Border Color};
+}
+.notes .tumblr-notes .notes {
+  margin: 0 auto;
+  text-align: left;
+  width: 780px;
+}
+.notes .tumblr-notes .note {
+  height: 32px;
+  line-height: 32px;
+}
+.notes .tumblr-notes .note .avatar {
+  vertical-align: middle;
+}
+.notes .tumblr-notes .note .action {
+  font-size: 11px;
+  display: inline-block;
+  padding-left: 10px;
+  line-height: 1.2em;
+}
+.notes .tumblr-notes .note .action a {
+  display: inline-block;
+  border-bottom: 1px solid {color:Post Border Color};
 }

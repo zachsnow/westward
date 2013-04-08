@@ -1,9 +1,10 @@
 <div class="notes">
-  <a href="{Permalink}" class="note-count no-notes {block:NoteCount}has-notes{/block:NoteCount}" target="_new">{text:No Notes Message}</a>
+  
+    <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
+  
   {block:PostNotes}
-    {block:NoteCount}
-      <a class="note-count" href="{Permalink}" target="_new">{NotesCountWithLabel}</a>
-    {/block:NoteCount}
-    {PostNotes-64}
+    <div class="tumblr-notes">
+      {PostNotes-16}
+    </div>
   {/block:PostNotes}
 </div>
