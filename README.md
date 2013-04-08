@@ -81,6 +81,6 @@ all the rest of the text. To set these up, first create a new kit and
 grab the kit "identifier" (the basename of the embed code Javascript file)
 and set `Typekit ID`.
 
-Next, pick your fonts, and set `Header Font Family` and `Text Font Family`
+Next, pick your fonts, and set `Typkit Header Font Family` and `Typekit Text Font Family`
 to whichever font families you picked. Of course, you can add all kinds of
 other selectors to your kit too, if you want to get crazy.
