@@ -2,6 +2,7 @@
 import sys
 import os.path
 import subprocess
+import codecs
 import jinja2
 
 PATH = os.path.dirname(os.path.abspath(__file__))
@@ -44,7 +45,7 @@ def compile(input):
     args.extend([input, SCSS_OUTPUT_PATH])
     try:
         subprocess.check_output(args=args)
-        with open(SCSS_OUTPUT_PATH) as output:
+        with codecs.open(SCSS_OUTPUT_PATH, 'r', 'utf-8') as output:
             return output.read()
     except subprocess.CalledProcessError as e:
         print e.output
@@ -55,7 +56,7 @@ def save(filename, text):
     """
     Overwrite the file specified by `filename` with `text`.
     """
-    with open(filename, 'w') as file:
+    with codecs.open(filename, 'w', 'utf-8') as file:
         file.write(text)
 
 
