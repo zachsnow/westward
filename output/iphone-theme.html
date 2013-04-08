@@ -36,7 +36,8 @@
 <meta name="color:Highlight Color" content="#303030" />
 
 <meta name="text:Byline" content="" />
-<meta name="text:Visible Email" content="" />
+<meta name="text:Byline Prefix" content="By" />
+<meta name="text:Byline Link" content="" />
 
 <meta name="text:Google Analytics ID" content="" />
 <meta name="text:Typekit ID" content="" />
@@ -122,12 +123,33 @@ body {
 }
 
 .footer {
+  margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
   color: {color:Secondary Text Color};
 }
 .footer .footer-byline {
+  line-height: 1.2em;
   color: {color:Primary Text Color};
+}
+.footer .footer-byline .email {
+  line-height: 1.2em;
+  display: inline-block;
+  border-bottom: 1px solid {color:Post Border Color};
+}
+.footer .footer-links {
+  margin-top: 10px;
+  line-height: 1.2em;
+}
+.footer .footer-links .archive {
+  line-height: 1.2em;
+  display: inline-block;
+  border-bottom: 1px solid {color:Post Border Color};
+}
+.footer .footer-links .copy {
+  line-height: 1.2em;
+  display: inline-block;
+  border-bottom: 1px solid {color:Post Border Color};
 }
 
 i, em {
@@ -313,11 +335,12 @@ b, strong {
 }
 .notes .tumblr-notes .note .action {
   font-size: 11px;
-  display: inline-block;
   padding-left: 10px;
+  display: inline-block;
   line-height: 1.2em;
 }
 .notes .tumblr-notes .note .action a {
+  line-height: 1.2em;
   display: inline-block;
   border-bottom: 1px solid {color:Post Border Color};
 }
@@ -650,13 +673,18 @@ b, strong {
 {/block:Pagination}
       <div class="footer">
   {block:IfByline}
-    <h3 class="footer-byline">{text:Byline}</h3>
+    <h3 class="footer-byline">
+      {block:IfBylinePrefix}{text:Byline Prefix}{/block:IfBylinePrefix}
+      {block:IfBylineLink}<a href="{text:Byline Link}" class="email">{/block:IfBylineLink}
+        {text:Byline}
+      {block:IfBylineLink}</a>{/block:IfBylineLink}
+    </h3>
   {/block:IfByline}
   
   <div class="footer-links">
     <a class="archive" href="/archive">Archive</a>
     |
-    <a href="https://github.com/zachsnow/whistlingwestward.com/">&copy; Snow</a>
+    <a class="copy" href="https://github.com/zachsnow/westward/">&copy; Snow</a>
   </div>
 </div>
     </div>

@@ -33,13 +33,13 @@
       
       .action {
         font-size: 11px;
-        display: inline-block;
         padding-left: 10px;
+        
+        display: inline-block;
         line-height: 1.2em;
         
         a {
-          display: inline-block;
-          border-bottom: 1px solid $postBorderColor;
+          @include link();
         }
       }
     }

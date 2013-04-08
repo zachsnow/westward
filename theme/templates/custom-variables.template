@@ -7,7 +7,8 @@
 <meta name="color:Highlight Color" content="#303030" />
 
 <meta name="text:Byline" content="" />
-<meta name="text:Visible Email" content="" />
+<meta name="text:Byline Prefix" content="By" />
+<meta name="text:Byline Link" content="" />
 
 <meta name="text:Google Analytics ID" content="" />
 <meta name="text:Typekit ID" content="" />

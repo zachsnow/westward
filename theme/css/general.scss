@@ -4,15 +4,39 @@ body {
   line-height: 1.8em;
 }
 
+@mixin link(){
+  line-height: 1.2em;
+  display: inline-block;
+  border-bottom: 1px solid $postBorderColor;
+}
+
 .footer {
+  margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
   color: $secondaryTextColor;
   
-  .archive {}
-  
   .footer-byline {
+    line-height: 1.2em;
+    
     color: $primaryTextColor;
+    
+    .email {
+      @include link();
+    }
+  }
+  
+  .footer-links {
+    margin-top: 10px;
+    line-height: 1.2em;
+    
+    .archive {
+      @include link();
+    }
+  
+    .copy {
+      @include link();
+    }
   }
 }
 
