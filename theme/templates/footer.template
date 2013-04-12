@@ -1,16 +1,19 @@
 <div class="footer">
   {block:IfByline}
     <h3 class="footer-byline">
-      {block:IfBylinePrefix}{text:Byline Prefix}{/block:IfBylinePrefix}
       {block:IfBylineLink}<a href="{text:Byline Link}" class="email">{/block:IfBylineLink}
-        {text:Byline}
+        {block:IfBylinePrefix}{text:Byline Prefix}{/block:IfBylinePrefix}
+        <span class="byline">{text:Byline}</span>
       {block:IfBylineLink}</a>{/block:IfBylineLink}
     </h3>
   {/block:IfByline}
   
+  
   <div class="footer-links">
     <a class="archive" href="/archive">Archive</a>
-    |
-    <a class="copy" href="https://github.com/zachsnow/westward/">&copy; Snow</a>
+  </div>
+  
+  <div class="theme">
+    <a class="copy" href="https://github.com/zachsnow/westward/">Theme &raquo;</a>
   </div>
 </div>

@@ -23,22 +23,23 @@ body {
     
     color: $primaryTextColor;
     
-    .email {
-      @include link();
-    }
+    @include link();
   }
   
   .footer-links {
-    margin-top: 10px;
+    margin-top: 20px;
     line-height: 1.2em;
     
     .archive {
       @include link();
     }
+  }
   
-    .copy {
-      @include link();
-    }
+  .theme {
+    margin-top: 15px;
+    font-size: 12px;
+    text-align: right;
+    margin-right: 10px;
   }
 }
 

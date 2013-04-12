@@ -62,14 +62,12 @@ body {
 .footer .footer-byline {
   line-height: 1.2em;
   color: {color:Primary Text Color};
-}
-.footer .footer-byline .email {
   line-height: 1.2em;
   display: inline-block;
   border-bottom: 1px solid {color:Post Border Color};
 }
 .footer .footer-links {
-  margin-top: 10px;
+  margin-top: 20px;
   line-height: 1.2em;
 }
 .footer .footer-links .archive {
@@ -77,10 +75,11 @@ body {
   display: inline-block;
   border-bottom: 1px solid {color:Post Border Color};
 }
-.footer .footer-links .copy {
-  line-height: 1.2em;
-  display: inline-block;
-  border-bottom: 1px solid {color:Post Border Color};
+.footer .theme {
+  margin-top: 15px;
+  font-size: 12px;
+  text-align: right;
+  margin-right: 10px;
 }
 
 i, em {
@@ -225,8 +224,8 @@ b, strong {
 }
 
 .pagination {
+  margin-top: 25px;
   text-align: center;
-  margin-bottom: 10px;
 }
 .pagination .pagination-link {
   display: inline-block;

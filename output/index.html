@@ -9,7 +9,7 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     
-    <meta name="viewport" content="width=780">
+    <meta name="viewport" content="width=980">
     
     {block:Description}
       <meta name="description" content="{MetaDescription}" />
@@ -32,7 +32,7 @@
 <meta name="color:Post Background Color" content="#202020"/>
 
 <meta name="color:Primary Text Color" content="#f0f0f0" />
-<meta name="color:Secondary Text Color" content="#a0a0a0" />
+<meta name="color:Secondary Text Color" content="#707070" />
 <meta name="color:Highlight Color" content="#303030" />
 
 <meta name="text:Byline" content="" />
@@ -137,14 +137,12 @@ body {
 .footer .footer-byline {
   line-height: 1.2em;
   color: {color:Primary Text Color};
-}
-.footer .footer-byline .email {
   line-height: 1.2em;
   display: inline-block;
   border-bottom: 1px solid {color:Post Border Color};
 }
 .footer .footer-links {
-  margin-top: 10px;
+  margin-top: 20px;
   line-height: 1.2em;
 }
 .footer .footer-links .archive {
@@ -152,10 +150,11 @@ body {
   display: inline-block;
   border-bottom: 1px solid {color:Post Border Color};
 }
-.footer .footer-links .copy {
-  line-height: 1.2em;
-  display: inline-block;
-  border-bottom: 1px solid {color:Post Border Color};
+.footer .theme {
+  margin-top: 15px;
+  font-size: 12px;
+  text-align: right;
+  margin-right: 10px;
 }
 
 i, em {
@@ -300,8 +299,8 @@ b, strong {
 }
 
 .pagination {
+  margin-top: 25px;
   text-align: center;
-  margin-bottom: 10px;
 }
 .pagination .pagination-link {
   display: inline-block;
@@ -711,17 +710,20 @@ b, strong {
       <div class="footer">
   {block:IfByline}
     <h3 class="footer-byline">
-      {block:IfBylinePrefix}{text:Byline Prefix}{/block:IfBylinePrefix}
       {block:IfBylineLink}<a href="{text:Byline Link}" class="email">{/block:IfBylineLink}
-        {text:Byline}
+        {block:IfBylinePrefix}{text:Byline Prefix}{/block:IfBylinePrefix}
+        <span class="byline">{text:Byline}</span>
       {block:IfBylineLink}</a>{/block:IfBylineLink}
     </h3>
   {/block:IfByline}
   
+  
   <div class="footer-links">
     <a class="archive" href="/archive">Archive</a>
-    |
-    <a class="copy" href="https://github.com/zachsnow/westward/">&copy; Snow</a>
+  </div>
+  
+  <div class="theme">
+    <a class="copy" href="https://github.com/zachsnow/westward/">Theme &raquo;</a>
   </div>
 </div>
     </div>
