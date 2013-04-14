@@ -59,6 +59,12 @@ you really don't need to do this step for now.
 Now that the theme is installed, you need to configure it.  The colors
 are pretty obvious, but here's some information about the rest.
 
+### Wide Mode
+
+I really like the [Beaver Brook](http://beaverbrook.com) style. Check the
+**Wide** checkbox to make your photos go all the way across. It looks cool, but it
+kind of doesn't work for portrait photos (they are way too tall).
+
 ### Byline
 
 The `Byline` settings change how the footer looks.  In the example
