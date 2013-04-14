@@ -61,7 +61,7 @@
     </style>
   </head>
   
-  <body>
+  <body class="{block:IfWide}wide{/block:IfWide}">
     <div class="main">
       {% include 'header.template' %}
       {% include 'posts.template' %}

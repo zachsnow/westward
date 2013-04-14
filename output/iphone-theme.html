@@ -30,6 +30,7 @@
       <meta name="color:Background Color" content="#181818"/>
 <meta name="color:Post Border Color" content="#303030"/>
 <meta name="color:Post Background Color" content="#202020"/>
+<meta name="color:Photo Shadow Color" content="#101010"/>
 
 <meta name="color:Primary Text Color" content="#f0f0f0" />
 <meta name="color:Secondary Text Color" content="#707070" />
@@ -198,6 +199,39 @@ b, strong {
   left: 20px;
 }
 
+.wide .header.has-first-photo {
+  height: 0;
+}
+.wide .header.has-first-photo .header-mast {
+  height: 0;
+  left: 10px;
+}
+
+.wide .posts .post {
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 20px;
+  border: 0;
+  /* Make photos super wide, for fun! */
+  /* Make it easier to see which title goes with which image. */
+}
+.wide .posts .post.photo .post-content, .wide .posts .post.photoset .post-content {
+  max-width: none;
+  margin: 0;
+}
+.wide .posts .post .post-footer, .wide .posts .post .photo-caption {
+  opacity: 0.4;
+  transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.25s ease-in-out;
+}
+.wide .posts .post:hover .post-footer, .wide .posts .post:hover .photo-caption {
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.25s ease-in-out;
+}
+
 .posts .post {
   margin-right: 10px;
   margin-left: 10px;
@@ -248,6 +282,10 @@ b, strong {
 }
 .posts .post.photo .photo-caption p:first-child:last-child, .posts .post.photoset .photo-caption p:first-child:last-child {
   padding-bottom: 0;
+}
+.posts .post.photo .photoset-photos .photoset-photo, .posts .post.photoset .photoset-photos .photoset-photo {
+  -webkit-box-shadow: 0px 0px 25px 5px {color:Photo Shadow Color};
+  box-shadow: 0px 0px 25px 5px {color:Photo Shadow Color};
 }
 .posts .post.photo .photoset-photos .photoset-photo .photo-image, .posts .post.photoset .photoset-photos .photoset-photo .photo-image {
   width: 100%;
@@ -386,7 +424,7 @@ b, strong {
     </style>
   </head>
   
-  <body>
+  <body class="{block:IfWide}wide{/block:IfWide}">
     <div class="main">
       
 

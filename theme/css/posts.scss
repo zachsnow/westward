@@ -1,3 +1,32 @@
+.wide .posts {
+  .post {
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 20px;
+    
+    border: 0;
+    
+    /* Make photos super wide, for fun! */
+    &.photo .post-content, &.photoset .post-content {
+      max-width: none;
+      margin: 0;
+    }
+    
+    /* Make it easier to see which title goes with which image. */
+    .post-footer, .photo-caption {
+      opacity: 0.4;
+      
+      @include animate(opacity, .25s, ease-in-out);
+    }
+    &:hover {
+      .post-footer, .photo-caption {
+        opacity: 1;
+        @include animate(opacity, .25s, ease-in-out);
+      }
+    }
+  }
+}
+
 .posts {
   .post {
     margin-right: 10px;
@@ -65,6 +94,9 @@
       
       .photoset-photos {
         .photoset-photo {
+          -webkit-box-shadow: 0px 0px 25px 5px $photoShadowColor;
+          box-shadow: 0px 0px 25px 5px $photoShadowColor;
+
           .photo-image {
             width: 100%;
             height: auto;

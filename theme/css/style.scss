@@ -8,6 +8,8 @@ $highlightColor: #{'{color:Highlight Color}'};
 $postBackgroundColor: #{'{color:Post Background Color}'};
 $postBorderColor: #{'{color:Post Border Color}'};
 
+$photoShadowColor: #{'{color:Photo Shadow Color}'};
+
 $headerFontFamily: #{'{block:IfTypekitHeaderFontFamily}"{text:Typekit Header Font Family}", {/block:IfTypekitHeaderFontFamily}sans-serif'};
 $textFontFamily: #{'{block:IfTypekitTextFontFamily}"{text:Typekit Text Font Family}", {/block:IfTypekitTextFontFamily}sans-serif"'};
 

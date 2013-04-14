@@ -12,6 +12,12 @@ body {
   border-bottom: 1px solid $postBorderColor;
 }
 
+@mixin animate($property, $time, $ease: ease-in-out){
+  transition: $property $time $ease;
+  -moz-transition: $property $time $ease;
+  -webkit-transition: $property $time $ease;
+}
+
 .footer {
   margin-top: 20px;
   margin-bottom: 20px;

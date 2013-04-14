@@ -22,12 +22,23 @@
   }
   
   height: 180px;
+  
   &.has-first-photo {
     height: 20px;
     
     .header-mast {
       top: 40px;
       left: 20px;
+    }
+  }
+}
+
+.wide .header {
+  &.has-first-photo {
+    height: 0;
+    .header-mast {
+      height: 0;
+      left: 10px;
     }
   }
 }
