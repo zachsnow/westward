@@ -1,0 +1,17 @@
+{% extends "post.template" %}
+
+{% block type %}audio{% endblock %}
+
+{% block content %}
+  {block:AudioEmbed}
+    <div class="audio-embed">{AudioEmbed-640}</div>
+  {/block:AudioEmbed}
+  
+  {block:Caption}
+    <div class="audio-caption">{Caption}</div>
+  {/block:Caption}
+  
+  <div class="audio-playcount">
+    &#x266c; {FormattedPlayCount}
+  </div>
+{% endblock %}

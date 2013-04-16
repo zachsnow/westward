@@ -141,6 +141,36 @@
       }
     }
     
+    /* Shared between photo and photoset posts. */
+    &.audio {
+      .audio-embed {
+        text-align: center;
+      }
+      
+      .audio-caption {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 13px;
+        
+        /* Assumes that the first paragraph in the caption is the "real" title. */
+        p:first-child {
+          @include headerFontFamily;
+          font-size: 30px;
+          padding-bottom: 10px;
+          
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+      .audio-playcount {
+        text-align: center;
+        color: $secondaryTextColor;
+        margin-top: 10px;
+        font-size: 11px
+      }
+    }
+    
     &.link {
       text-align: center;
       

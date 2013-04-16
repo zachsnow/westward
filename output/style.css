@@ -163,6 +163,7 @@ b, strong {
   padding-bottom: 20px;
   border-bottom: 2px solid {color:Post Border Color};
   /* Shared between photo and photoset posts. */
+  /* Shared between photo and photoset posts. */
 }
 .posts .post:last-child {
   margin-bottom: 20px;
@@ -238,6 +239,29 @@ b, strong {
 .posts .post.quote .quote-text {
   font-style: italic;
   font-size: 20px;
+}
+.posts .post.audio .audio-embed {
+  text-align: center;
+}
+.posts .post.audio .audio-caption {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  /* Assumes that the first paragraph in the caption is the "real" title. */
+}
+.posts .post.audio .audio-caption p:first-child {
+  font-family: {block:IfTypekitHeaderFontFamily}"{text:Typekit Header Font Family}", {/block:IfTypekitHeaderFontFamily}sans-serif;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+.posts .post.audio .audio-caption p:first-child:last-child {
+  padding-bottom: 0;
+}
+.posts .post.audio .audio-playcount {
+  text-align: center;
+  color: {color:Secondary Text Color};
+  margin-top: 10px;
+  font-size: 11px;
 }
 .posts .post.link {
   text-align: center;

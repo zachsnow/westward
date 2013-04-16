@@ -1,6 +1,7 @@
 <ul class="posts">
   {block:Posts}
     {% include 'text.template' %}
+    {% include 'audio.template' %}
     {% include 'photo.template' %}
     {% include 'photoset.template' %}
     {% include 'quote.template' %}

@@ -239,6 +239,7 @@ b, strong {
   padding-bottom: 20px;
   border-bottom: 2px solid {color:Post Border Color};
   /* Shared between photo and photoset posts. */
+  /* Shared between photo and photoset posts. */
 }
 .posts .post:last-child {
   margin-bottom: 20px;
@@ -314,6 +315,29 @@ b, strong {
 .posts .post.quote .quote-text {
   font-style: italic;
   font-size: 20px;
+}
+.posts .post.audio .audio-embed {
+  text-align: center;
+}
+.posts .post.audio .audio-caption {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  /* Assumes that the first paragraph in the caption is the "real" title. */
+}
+.posts .post.audio .audio-caption p:first-child {
+  font-family: {block:IfTypekitHeaderFontFamily}"{text:Typekit Header Font Family}", {/block:IfTypekitHeaderFontFamily}sans-serif;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+.posts .post.audio .audio-caption p:first-child:last-child {
+  padding-bottom: 0;
+}
+.posts .post.audio .audio-playcount {
+  text-align: center;
+  color: {color:Secondary Text Color};
+  margin-top: 10px;
+  font-size: 11px;
 }
 .posts .post.link {
   text-align: center;
@@ -491,7 +515,7 @@ b, strong {
       
       <div class="notes">
   
-    <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
+  <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
   
   {block:PostNotes}
     <div class="tumblr-notes">
@@ -502,6 +526,63 @@ b, strong {
     </div>
   </li>
 {/block:Text}
+    
+
+{block:Audio}
+  <!-- TODO: there's got to be a better way! Squagels!
+    audio
+  -->
+  <li class="post audio {TagsAsClasses} 
+  
+  
+  {block:Post1}
+    first-post
+    {block:Photo}has-first-photo{/block:Photo}
+    {block:Photoset}has-first-photo{/block:Photoset}
+  {/block:Post1}
+  
+  
+">
+    <div class="post-content">
+      
+  {block:AudioEmbed}
+    <div class="audio-embed">{AudioEmbed-640}</div>
+  {/block:AudioEmbed}
+  
+  {block:Caption}
+    <div class="audio-caption">{Caption}</div>
+  {/block:Caption}
+  
+  <div class="audio-playcount">
+    &#x266c; {FormattedPlayCount}
+  </div>
+
+    </div>
+    
+    <div class="post-footer">
+      {block:HasTags}
+        <ul class="post-tags">
+          {block:Tags}
+            <li class="post-tag">
+              <a class="post-tag-link" href="{TagURL}">{Tag}</a>
+            </li>
+          {/block:Tags}
+        </ul>
+      {/block:HasTags}
+      
+      <div class="notes">
+  
+  <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
+  
+  {block:PostNotes}
+    <div class="tumblr-notes">
+      {PostNotes-16}
+    </div>
+  {/block:PostNotes}
+</div>
+    </div>
+  </li>
+{/block:Audio}
     
 
 {block:Photo}
@@ -548,7 +629,7 @@ b, strong {
       
       <div class="notes">
   
-    <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
+  <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
   
   {block:PostNotes}
     <div class="tumblr-notes">
@@ -607,7 +688,7 @@ b, strong {
       
       <div class="notes">
   
-    <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
+  <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
   
   {block:PostNotes}
     <div class="tumblr-notes">
@@ -662,7 +743,7 @@ b, strong {
       
       <div class="notes">
   
-    <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
+  <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
   
   {block:PostNotes}
     <div class="tumblr-notes">
@@ -718,7 +799,7 @@ b, strong {
       
       <div class="notes">
   
-    <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
+  <a href="{Permalink}" class="permalink note-count">&#x2665; {NoteCount}</a>
   
   {block:PostNotes}
     <div class="tumblr-notes">
