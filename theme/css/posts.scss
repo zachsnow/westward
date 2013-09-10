@@ -108,6 +108,7 @@
     
     &.text {
       .text-body {
+        width: $contentWidth / 2;
         border: 1px solid $postBorderColor;
         padding: 20px;
         background-color: $postBackgroundColor;

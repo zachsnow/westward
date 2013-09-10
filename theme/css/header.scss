@@ -1,5 +1,5 @@
 .header {
-  width: $contentWidth;
+  max-width: $contentWidth;
   margin: 0 auto;
   
   position: relative;
@@ -8,8 +8,6 @@
     position: absolute;
     top: 20px;
     left: 0;
-    
-    width: $contentWidth - 40px;
     
     @include headerFontFamily();
     
