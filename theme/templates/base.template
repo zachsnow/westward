@@ -18,7 +18,7 @@
     <meta property="og:title" content="{Title}{block:PostTitle} | {PostTitle}{/block:PostTitle}" />
     <meta property="og:image" content="{{ root_url }}{{ STATIC_URL }}images/logo.png" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Whistling Westward | Photography by Molly Peppel Snow" />
+    <meta property="og:site_name" content="{Title}" />
     <meta property="fb:admins" content="13900224" />
     
     {block:Description}
